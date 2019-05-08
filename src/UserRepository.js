@@ -4,19 +4,19 @@ class UserRepository {
 	}
 
 	returnUserData(userId) {
-		return this.instantiateUsers().find(user => user.id === userId);
+		return this.instantiateUsers().find(user => user.userData.id === userId);
 	}
 
 	calculateAvgStepGoal() {
 		return Math.ceil(this.instantiateUsers().reduce((sum, num) => {
-			return sum + num.dailyStepGoal;
+			return sum + num.userData.dailyStepGoal;
 		}, 0) / this.instantiateUsers().length);
 	}
 
 	calculateModeState() {
 		let stateCount = {};
 		this.instantiateUsers().forEach(el => {
-			const state = el.address.split(' ')[el.address.split(' ').length - 2]
+			const state = el.userData.address.split(' ')[el.userData.address.split(' ').length - 2]
 			if (stateCount[state] > 0) {
 				stateCount[state]++;
 			} else {
@@ -27,36 +27,17 @@ class UserRepository {
 		return Object.keys(stateCount).find(el => stateCount[el] === Math.max(...Object.values(stateCount)));
 	}
 
-	instantiateNewThing(dataFilePath) {
-		// conditional that checks the filepath
-		// instantiates the correct Class depending on filepath
-		// new instance takes in the current user
-	}
-
-	runActivityMethod(dataFilepath) {
-		//const newActivity = instantiateNewThing(dataFilePath);
-		//newActivity.activityMethod();
-	}
-
 	instantiateUsers() {
-		if (typeof module !== undefined) {
-			return require(this.dataFilepath).map(user => new User(user.id, user.name, user.address, user.email, user.strideLength, user.dailyStepGoal));
+		if (typeof module !== 'undefined') {
+			return require(this.dataFilepath).map(user => new User(user));
 		} else {
-			return userData.map(user => new User(user.id, user.name, user.address, user.email, user.strideLength, user.dailyStepGoal));
+			return userData.map(user => new User(user));
 		}
 	}
 
 }
 
-if (typeof module !== undefined) {
-	var users = require('../data/users');
-	var User = require('../src/User');
+if (typeof module !== 'undefined') {
+	User = require('../src/User');
 	module.exports = UserRepository;
 }
-
-// create method that parses the filePath and returns the require variable
-// use that method at the start of other methods to access each data set
-
-// create global variable for a potential require
-// use dataFilepath argument within a method to reassign that global variable
-// use reassigned variable within subsequent methods
