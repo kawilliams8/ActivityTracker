@@ -16,8 +16,6 @@ $(document).ready(function() {
 	populateUserInfo();
 
 	function populateUserInfo() {
-		console.log(userRepo.instantiateUsers())
-		console.log(userRepo.returnUserData(3).returnFirstName())
 		$h2FirstName.text(userRepo.returnUserData(3).returnFirstName());
 	}
 
