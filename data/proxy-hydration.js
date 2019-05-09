@@ -14,8 +14,8 @@ const proxyHydrationData = [
         "date": "08/05/2019",
         "numOunces": 39
       }]
-    },
-    {
+  },
+  {
     "userID": 2,
     "hydrationData": [
       {
@@ -30,8 +30,8 @@ const proxyHydrationData = [
         "date": "08/05/2019",
         "numOunces": 82
       }]
-    },
-    {
+  },
+  {
     "userID": 3,
     "hydrationData": [
       {
@@ -46,7 +46,7 @@ const proxyHydrationData = [
         "date": "08/05/2019",
         "numOunces": 28
       }]
-    }
-  ]
+  }
+]
 
 module.exports = proxyHydrationData;

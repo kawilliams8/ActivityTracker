@@ -20,4 +20,4 @@ class HydrationRepository {
 if (typeof module !== 'undefined') {
   User = require('../src/User');
   module.exports = HydrationRepository;
-  }
+}

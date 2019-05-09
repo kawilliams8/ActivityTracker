@@ -20,8 +20,8 @@ const proxyActivityData = [
         "minutesActive": 179,
         "flightsOfStairs": 4
       }
-      ]
-    },
+    ]
+  },
   {
     "userID": 2,
     "activityData": [
@@ -43,8 +43,8 @@ const proxyActivityData = [
         "minutesActive": 266,
         "flightsOfStairs": 31
       }
-      ]
-    },
+    ]
+  },
   {
     "userID": 3,
     "activityData": [
@@ -66,8 +66,8 @@ const proxyActivityData = [
         "minutesActive": 75,
         "flightsOfStairs": 29
       }
-      ]
-    }
-  ]
+    ]
+  }
+]
 
-  module.exports = proxyActivityData;
+module.exports = proxyActivityData;

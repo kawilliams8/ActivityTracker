@@ -13,7 +13,7 @@ const $stepGoalMessage = $('.step-goal-message');
 
 
 $(document).ready(function() {
-	const userRepo = new UserRepository();
+  const userRepo = new UserRepository();
 	populateUserName();
 	populateCardInfo();
 	displayStepGoalMessage();
@@ -35,7 +35,5 @@ $(document).ready(function() {
 		const userSteps = userRepo.returnUserData(3).userData.dailyStepGoal;
 		$stepGoalMessage.text(`The average Activity Tracker user set a goal of ${avgSteps} steps per day. Your goal of ${userSteps} is ${userSteps > avgSteps ? 'above' : 'below'} average.`);
 	}
-
-
 
 })
