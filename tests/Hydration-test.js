@@ -20,13 +20,13 @@ describe('Hydration', function() {
 		expect(hydrationRepo.returnHydrationUser(1).returnUserAvgOz()).to.eql(55);
 	})
 
-	it.skip('Should return the exact fluid ounces drank on a given day', function() {
-		const hydration = new Hydration();
-		expect(hydration).to.eql();
+	it('Should return the exact fluid ounces drank on a given day', function() {
+		const hydrationRepo = new HydrationRepository('../data/proxy-hydration');
+		expect(hydrationRepo.returnHydrationUser(1).hydrationDay("09/05/2019")).to.eql(40);
 	})
 
-	it.skip('Should return the fluid ounces drank on each day, during a given week', function() {
-		const hydration = new Hydration();
-		expect(hydration).to.eql();
+	it('Should return the fluid ounces drank on each day, during a given week', function() {
+		const hydrationRepo = new HydrationRepository('../data/proxy-hydration');
+		expect(hydrationRepo.returnHydrationUser(1).hydrationSevenDay('21/05/2019')['19/05/2019']).to.eql(77);
 	})
 })
