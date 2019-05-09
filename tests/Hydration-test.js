@@ -2,6 +2,7 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Hydration = require('../src/Hydration')
+const HydrationRepository = require('../src/HydrationRepository')
 
 describe('Hydration', function() {
 
@@ -15,8 +16,8 @@ describe('Hydration', function() {
 	});
 
 	it('Should return the user\'s average fluid ounces drank (over all their documented days)', function() {
-		const hydration = new Hydration();
-		expect(hydration.returnUserAvgOz(3)).to.eql(43);
+		const hydrationRepo = new HydrationRepository('../data/proxy-hydration');
+		expect(hydrationRepo.returnHydrationUser(1).returnUserAvgOz()).to.eql(55);
 	})
 
 	it.skip('Should return the exact fluid ounces drank on a given day', function() {
