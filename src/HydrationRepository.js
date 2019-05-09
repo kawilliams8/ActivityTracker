@@ -3,21 +3,21 @@ class HydrationRepository {
     this.dataFilepath = dataFilepath;
   }
 
-  instantiateUsers() {
+  instantiateHydrations() {
     if (typeof module !== 'undefined') {
-      return require(this.dataFilepath).map(el => new User(el));
+      return require(this.dataFilepath).map(el => new Hydration(el));
     } else {
-      return userData.map(el => new User(el));
+      return userData.map(el => new Hydration(el));
     }
   }
 
-  returnUserData(userId) {
-    return this.instantiateUsers().find(user => user.userData.userID === userId);
+  returnHydrationUser(userId) {
+    return this.instantiateHydrations().find(hyd => hyd.userHydrationData.userID === userId);
   }
 
 }
 
 if (typeof module !== 'undefined') {
-  User = require('../src/User');
+  Hydration = require('../src/Hydration');
   module.exports = HydrationRepository;
 }
