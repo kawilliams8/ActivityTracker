@@ -11,16 +11,30 @@
       <h1>Activity Tracker</h1>
     </header>
     <main>
-      <section>
-        <h2>Welcome, <span class="h2--first-name"></span></h2>
+      <h2>Welcome, <span class="h2--first-name"></span></h2>
+      <section class="user-info-card">
+        <h3>Your Info</h3>
         <ul>
-          <li class="li--name">Name: <span>1</span></li>
-          <li class="li--address">Address: <span>2</span></li>
-          <li class="li--email">Email: <span>3</span></li>
-          <li class="li--stride-length">Stride Length: <span>4</span></li>
-          <li class="li--daily-step-goal">Daily Step Goal: <span>5</span></li>
+          <li class="li--user li--name">Name: <span>1</span></li>
+          <li class="li--user li--address">Address: <span>2</span></li>
+          <li class="li--user li--email">Email: <span>3</span></li>
+          <li class="li--user li--stride-length">Stride Length: <span>4</span></li>
+          <li class="li--user li--daily-step-goal">Daily Step Goal: <span>5</span></li>
         </ul>
         <p class="step-goal-message"></p>
+      </section>
+      <section class="user-hydration-card">
+        <h3>Daily Hydration</h3>
+        <h4>You drank <span class="h4--hydration"></span>oz today</h4>
+        <ul>
+          <li class="li--hydro li--day1">Today: <span></span>oz</li>
+          <li class="li--hydro li--day2">Yesterday: <span></span>oz</li>
+          <li class="li--hydro li--day3">2 days ago: <span></span>oz</li>
+          <li class="li--hydro li--day4">3 days ago: <span></span>oz</li>
+          <li class="li--hydro li--day5">4 days ago: <span></span>oz</li>
+          <li class="li--hydro li--day6">5 days ago: <span></span>oz</li>
+          <li class="li--hydro li--day6">6 days ago: <span></span>oz</li>
+        </ul>
       </section>
     </main>
     <script type="text/javascript" src="./User.js"></script>
@@ -31,6 +45,7 @@
     <script type="text/javascript" src="./Activity.js"></script>
     <script type="text/javascript" src="./Hydration.js"></script>
     <script type="text/javascript" src="./Sleep.js"></script>
+    <script type="text/javascript" src="./HydrationRepository.js"></script>
     <script type="text/javascript" src="./UserRepository.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>
   </body>

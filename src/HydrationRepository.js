@@ -7,7 +7,7 @@ class HydrationRepository {
     if (typeof module !== 'undefined') {
       return require(this.dataFilepath).map(el => new Hydration(el));
     } else {
-      return userData.map(el => new Hydration(el));
+      return hydrationData.map(el => new Hydration(el));
     }
   }
 
