@@ -17,7 +17,7 @@ const proxySleepData = [
         "hoursSlept": 8.1,
         "sleepQuality": 1.9
       }]
-    },
+  },
   {
     "userID": 2,
     "sleepData": [
@@ -36,7 +36,7 @@ const proxySleepData = [
         "hoursSlept": 6.6,
         "sleepQuality": 4.5
       }]
-    },
+  },
   {
     "userID": 3,
     "sleepData": [

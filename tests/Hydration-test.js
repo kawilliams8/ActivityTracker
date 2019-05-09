@@ -14,7 +14,7 @@ describe('Hydration', function() {
 		expect(hydration).to.be.an.instanceOf(Hydration);
 	});
 
-	it('Should return the user\'s average fluid ounces drank \(over all their documented days\)', function() {
+	it('Should return the user\'s average fluid ounces drank (over all their documented days)', function() {
 		const hydration = new Hydration();
 		expect(hydration.returnUserAvgOz(3)).to.eql(43);
 	})
