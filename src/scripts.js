@@ -23,8 +23,8 @@ $(document).ready(function() {
 	}
 
 	function populateCardInfo() {
-		const spans = $.makeArray($listSpans)
-		const userInfo = Object.values(userRepo.returnUserData(3).userData)
+		const spans = $.makeArray($listSpans);
+		const userInfo = Object.values(userRepo.returnUserData(3).userData);
 		for (let i = 1; i < userInfo.length; i++) {
 			$(spans[i - 1]).text(userInfo[i]);
 		}
