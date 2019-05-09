@@ -1,8 +1,13 @@
 class Hydration {
+  constructor(hydrationData) {
+    this.hydrationData = hydrationData;
+  }
 
+  returnUserAvgOz(userId) {
+  }
 }
 
 if (typeof module !== 'undefined') {
-  // var User = require('../src/User');
-  module.exports = UserRepository;
+  // User = require('../src/User');
+  module.exports = Hydration;
 }
