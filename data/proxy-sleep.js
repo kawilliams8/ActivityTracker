@@ -18,7 +18,7 @@ const proxySleepData = [
         "sleepQuality": 1.9
       }]
     },
-    {
+  {
     "userID": 2,
     "sleepData": [
       {
@@ -37,7 +37,7 @@ const proxySleepData = [
         "sleepQuality": 4.5
       }]
     },
-    {
+  {
     "userID": 3,
     "sleepData": [
       {
@@ -55,7 +55,7 @@ const proxySleepData = [
         "hoursSlept": 4.7,
         "sleepQuality": 1.2
       }]
-    }
-  ]
+  }
+]
 
 module.exports = proxySleepData;
