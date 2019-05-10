@@ -15,7 +15,15 @@ class Sleep {
 			total += day.sleepQuality;
 			return index === array.length - 1 ? total / array.length : total;
   	}, 0));
-	}
+  }
+  
+  sleepDay(givenDate) {
+    return this.userSleepData.sleepData.find(el => el.date === givenDate).hoursSlept;
+  }
+
+  sleepQualityDay(givenDate) {
+    return this.userSleepData.sleepData.find(el => el.date === givenDate).sleepQuality;
+  }
 
 }
 
