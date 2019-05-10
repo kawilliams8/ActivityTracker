@@ -3,15 +3,15 @@ class SleepRepository {
 		this.dataFilepath = dataFilepath;
 	}
 
-	returnUserData(userId) {
-		return this.instantiateUsers().find(user => user.userData.userID === userId);
+	returnSleep(userId) {
+		return this.instantiateSleeps().find(slp => slp.userSleepData.userID === userId);
 	}
 
-	instantiateUsers() {
+	instantiateSleeps() {
 		if (typeof module !== 'undefined') {
-			return require(this.dataFilepath).map(user => new User(user));
+			return require(this.dataFilepath).map(user => new Sleep(user));
 		} else {
-			return sleepData.map(user => new User(user));
+			return sleepData.map(user => new Sleep(user));
 		}
 	}
 
@@ -26,14 +26,14 @@ class SleepRepository {
 	}
 
 	returnLongestSleepers(givenDate) {
-		const longSleepers = [];
-		this.instantiateUsers().forEach(el => longSleepers.push(el.userData.sleepData.find(el => el.date === givenDate)));
-		return longSleepers.find(el => el.hoursSlept === Math.max(el.hoursSlept));
+		// const longSleepers = [];
+		// this.instantiateUsers().forEach(el => longSleepers.push(el.userData.sleepData.find(el => el.date === givenDate)));
+		// return longSleepers.find(el => el.hoursSlept === Math.max(el.hoursSlept));
 	}
 
 }
 
 if (typeof module !== 'undefined') {
-	User = require('../src/User');
+	Sleep = require('../src/Sleep');
 	module.exports = SleepRepository;
 }
