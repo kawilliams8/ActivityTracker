@@ -14,16 +14,11 @@ class UserRepository {
 	}
 
 	calculateModeState() {
-		let stateCount = {};
-		this.instantiateUsers().forEach(el => {
-			const state = el.userData.address.split(' ')[el.userData.address.split(' ').length - 2]
-			if (stateCount[state] > 0) {
-				stateCount[state]++;
-			} else {
-				stateCount[state] = 1;
-			}
-		})
-		
+		const stateCount = this.instantiateUsers().reduce((stateCount, user) => {
+			const state = user.userData.address.split(' ')[user.userData.address.split(' ').length - 2];
+			const condish = stateCount[state] ? stateCount[state]++ : stateCount[state] = 1;
+			return stateCount;
+		}, {})
 		return Object.keys(stateCount).find(el => stateCount[el] === Math.max(...Object.values(stateCount)));
 	}
 
