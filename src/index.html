@@ -15,11 +15,11 @@
       <section class="user-info-card">
         <h3>Your Info</h3>
         <ul>
-          <li class="li--user li--name">Name: <span>1</span></li>
-          <li class="li--user li--address">Address: <span>2</span></li>
-          <li class="li--user li--email">Email: <span>3</span></li>
-          <li class="li--user li--stride-length">Stride Length: <span>4</span></li>
-          <li class="li--user li--daily-step-goal">Daily Step Goal: <span>5</span></li>
+          <li class="li--user li--name">Name: <span></span></li>
+          <li class="li--user li--address">Address: <span></span></li>
+          <li class="li--user li--email">Email: <span></span></li>
+          <li class="li--user li--stride-length">Stride Length: <span></span></li>
+          <li class="li--user li--daily-step-goal">Daily Step Goal: <span></span></li>
         </ul>
         <p class="step-goal-message"></p>
       </section>
@@ -36,6 +36,22 @@
           <li class="li--hydro li--day6">6 days ago: <span></span>oz</li>
         </ul>
       </section>
+      <section class="user-sleep-card">
+        <h3>Daily Sleep</h3>
+        <h4>You slept <span class="h4--sleep-hours"></span> hours today; your sleep quality rating was <span class="h4--sleep-quality"></span>!</h4>
+        <ul>
+          <li class="li--sleep li--day1">Today: <span></span> hours</li>
+          <li class="li--sleep li--day2">Yesterday: <span></span> hours</li>
+          <li class="li--sleep li--day3">2 days ago: <span></span> hours</li>
+          <li class="li--sleep li--day4">3 days ago: <span></span> hours</li>
+          <li class="li--sleep li--day5">4 days ago: <span></span> hours</li>
+          <li class="li--sleep li--day6">5 days ago: <span></span> hours</li>
+          <li class="li--sleep li--day6">6 days ago: <span></span> hours</li>
+        </ul>
+        <p>Your all-time average sleep quality is <span class="p--sleep-quality"></span> out of 5.</p>
+        <p>Your all-time average number of hours slept is <span class="p--sleep-hours"></span>.</p>
+        <p>You've had <span class="p--sleep-best"></span> days with a sleep quality of 4 or higher.</p>
+      </section>
     </main>
     <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="../data/activity.js"></script>
@@ -45,6 +61,8 @@
     <script type="text/javascript" src="./Activity.js"></script>
     <script type="text/javascript" src="./Hydration.js"></script>
     <script type="text/javascript" src="./Sleep.js"></script>
+    <script type="text/javascript" src="./ActivityRepository.js"></script>
+    <script type="text/javascript" src="./SleepRepository.js"></script>
     <script type="text/javascript" src="./HydrationRepository.js"></script>
     <script type="text/javascript" src="./UserRepository.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>

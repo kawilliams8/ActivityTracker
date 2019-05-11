@@ -35,4 +35,9 @@ describe('Sleep', function() {
 		expect(sleepRepo.returnSleep(3).sleepQualityDay('06/05/2019')).to.eql(5);
 	})
 
+	it('Should return the total number of days with sleep quality over 4 for given user', function() {
+		const sleepRepo = new SleepRepository('../data/proxy-sleep');
+		expect(sleepRepo.returnSleep(3).countBestQualities()).to.eql(2);
+	})
+
 });

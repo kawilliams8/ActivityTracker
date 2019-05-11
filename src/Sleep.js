@@ -25,6 +25,13 @@ class Sleep {
     return this.userSleepData.sleepData.find(el => el.date === givenDate).sleepQuality;
   }
 
+  countBestQualities() {
+  	return this.userSleepData.sleepData.reduce((acc, curr) => {
+  		const bestSleep = curr.sleepQuality >= 4 ? acc++ : acc;
+  		return acc;
+  	}, 0);
+  }
+
 }
 
 if (typeof module !== 'undefined') {

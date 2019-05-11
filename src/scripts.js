@@ -1,11 +1,13 @@
 $(document).ready(function() {
   const userRepo = new UserRepository();
   const hydroRepo = new HydrationRepository();
+  const sleepRepo = new SleepRepository();
 	populateUserName();
 	populateUserCard();
 	displayStepGoalMessage();
 	populateTodayHydration();
 	populateHydrationCard();
+	populateSleepCard();
 
 	function populateUserName() {
 		$('.h2--first-name').text(userRepo.returnUserData(3).returnFirstName() + '!');
@@ -35,5 +37,25 @@ $(document).ready(function() {
 
 	function populateTodayHydration() {
 		$('.h4--hydration').text(hydroRepo.returnHydrationUser(3).hydrationDay('21/05/2019'));
+	}
+
+	function populateSleepCard() {
+		populateTodaySleep("13/08/2019");
+		populateSleepMessage('.p--sleep-quality');
+		populateSleepMessage('.p--sleep-hours');
+		populateBestSleepCount();
+	}
+
+	function populateSleepMessage(span) {
+		return span == '.p--sleep-quality' ? $(span).text(sleepRepo.returnSleep(3).returnAllTimeQuality()) : $(span).text(sleepRepo.returnSleep(3).returnAvgHours());
+	}
+
+	function populateTodaySleep(givenDate) {
+		$('.h4--sleep-hours').text(sleepRepo.returnSleep(3).sleepDay(givenDate));
+		$('.h4--sleep-quality').text(sleepRepo.returnSleep(3).sleepQualityDay(givenDate));
+	}
+
+	function populateBestSleepCount() {
+		$('.p--sleep-best').text(sleepRepo.returnSleep(3).countBestQualities());
 	}
 })
