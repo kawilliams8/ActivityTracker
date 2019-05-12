@@ -22,16 +22,21 @@ describe('SleepRepository', function() {
 
 	it('Should return user data object based on userId and data file', function() {
 		const sleepRepository = new SleepRepository('../data/proxy-sleep');
-		expect(sleepRepository.returnSleep(3).userSleepData.sleepData[0].sleepQuality).to.eql(5);
+		expect(sleepRepository.returnSleep(3).userSleepData.sleepData[0].sleepQuality).to.eql(4.1);
 	})
 
 	it('Should calculate and return the average sleep quality for all users', function() {
 		const sleepRepository = new SleepRepository('../data/proxy-sleep');
-		expect(sleepRepository.returnAvgSleepQuality()).to.equal(3.7);
+		expect(sleepRepository.returnAvgSleepQuality()).to.equal(3);
 	})
 
 	it('Should find the users that slept the most on a given day ', function() {
 		const sleepRepository = new SleepRepository('../data/proxy-sleep');
-		expect(sleepRepository.returnLongestSleepers('06/05/2019')).to.eql([1, 4]);
+		expect(sleepRepository.returnLongestSleepers('06/05/2019')).to.eql([3]);
+	})
+
+	it('Should return all user IDs for users that have an average sleep quality greater than 3, within a given week ', function () {
+		const sleepRepository = new SleepRepository('../data/proxy-sleep');
+		expect(sleepRepository.returnGreatSleepers("08/05/2019")).to.eql([2, 3])
 	})
 }) 
