@@ -27,7 +27,7 @@ describe('Sleep', function() {
 
 	it('Should return the user\'s hours of sleep on a given day', function() {
 		const sleepRepo = new SleepRepository('../data/proxy-sleep');
-		expect(sleepRepo.returnSleep(1).sleepDay('08/05/2019')).to.eql(8.1);
+		expect(sleepRepo.returnSleep(1).sleepDay('08/05/2019')).to.eql(9.2);
 	})
 
 	it('Should return the user\'s sleep quality on a given day', function() {
@@ -43,6 +43,11 @@ describe('Sleep', function() {
 	it('Should get sleep hours for seven days, including a given date', function() {
 		const sleepRepo = new SleepRepository('../data/proxy-sleep');
 		expect(sleepRepo.returnSleep(3).returnSleepWeek("08/05/2019")).to.eql([4.7, 7.2, 5.4, 4.7, 7.2, 5.4, 4.7])
+	})
+
+	it('Should get sleep quality for seven days, including a given date', function() {
+		const sleepRepo = new SleepRepository('../data/proxy-sleep');
+		expect(sleepRepo.returnSleep(3).returnQualWeek("08/05/2019")).to.eql([ 1.2, 5, 4.1, 1.2, 5, 4.1, 1.2 ])
 	})
 
 });

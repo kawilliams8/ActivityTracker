@@ -44,6 +44,7 @@ $(document).ready(function() {
 		populateSleepMessage('.p--sleep-quality');
 		populateSleepMessage('.p--sleep-hours');
 		populateBestSleepCount();
+		populateSleepWeek();
 	}
 
 	function populateSleepMessage(span) {
@@ -57,5 +58,16 @@ $(document).ready(function() {
 
 	function populateBestSleepCount() {
 		$('.p--sleep-best').text(sleepRepo.returnSleep(3).countBestQualities());
+	}
+
+	function populateSleepWeek() {
+		const spanHours = $.makeArray($('.li--span-hours'));
+		const spanQuals = $.makeArray($('.li--span-quality'));
+		const hoursInfo = Object.values(sleepRepo.returnSleep(3).returnSleepWeek('21/05/2019'));
+		const qualInfo = Object.values(sleepRepo.returnSleep(3).returnQualWeek('21/05/2019'));
+		for (let i = 0; i < hoursInfo.length; i++) {
+			$(spanHours[i]).text(hoursInfo[i]);
+			$(spanQuals[i]).text(qualInfo[i]);
+		}
 	}
 })
