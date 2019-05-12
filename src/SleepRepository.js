@@ -21,8 +21,20 @@ class SleepRepository {
 		return Math.round((10 * qualities.reduce((sum, num) => sum + num)) / qualities.length) / 10;
 	}
 
-	returnGreatSleepers() {
-		//
+	returnGreatSleepers(givenDate) {
+		return this.instantiateSleeps().reduce((final, user) => {
+			const todayIndex = user.userSleepData.sleepData.findIndex(el => el.date === givenDate);
+			const avgQual = user.userSleepData.sleepData.reduce((sum, el, index) => {
+				if (index <= todayIndex && index >= todayIndex - 6) {
+					sum += el.sleepQuality;
+				}
+				return sum;
+			}, 0)
+				if ((avgQual / 7) > 3) {
+					final.push(user.userSleepData.userID);
+				}
+			return final;
+		}, []);
 	}
 
 	returnLongestSleepers(givenDate) {

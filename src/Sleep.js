@@ -32,6 +32,16 @@ class Sleep {
   	}, 0);
   }
 
+  returnSleepWeek(givenDate) {
+    const todayIndex = this.userSleepData.sleepData.findIndex(el => el.date === givenDate);
+    return this.userSleepData.sleepData.reduce((acc, day, index) => {
+      if (index <= todayIndex && index >= todayIndex - 6) {
+        acc.push(day.hoursSlept);
+      }
+      return acc;
+    }, [])
+  }
+
 }
 
 if (typeof module !== 'undefined') {
