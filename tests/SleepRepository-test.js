@@ -34,4 +34,4 @@ describe('SleepRepository', function() {
 		const sleepRepository = new SleepRepository('../data/proxy-sleep');
 		expect(sleepRepository.returnLongestSleepers('06/05/2019')).to.eql([1, 4]);
 	})
-})
+}) 
