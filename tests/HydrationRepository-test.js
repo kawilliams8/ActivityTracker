@@ -17,12 +17,12 @@ describe('HydrationRepository', function () {
 
   it('Should instantiate users\' hydration data objects with the given file path', function () {
     const hydrationRepository = new HydrationRepository('../data/proxy-hydration');
-    expect(hydrationRepository.instantiateHydrations()[0].user.hydrationData[0].numOunces).to.eql(64);
+    expect(hydrationRepository.instantiateHydrations()[0].userHydrationData.hydrationData[0].numOunces).to.eql(64);
   })
 
   it('Should return user data object based on userId and data file', function () {
     const hydrationRepository = new HydrationRepository('../data/proxy-hydration');
-    expect(hydrationRepository.returnHydrationUser(1).user.hydrationData[1].numOunces).to.eql(80);
+    expect(hydrationRepository.returnHydrationUser(1).userHydrationData.hydrationData[1].numOunces).to.eql(80);
   })
 
 })

@@ -65,6 +65,42 @@ const proxyActivityData = [
         "numSteps": 4483,
         "minutesActive": 75,
         "flightsOfStairs": 29
+      },
+      {
+        "date": "09/05/2019",
+        "numSteps": 2420,
+        "minutesActive": 121,
+        "flightsOfStairs": 22
+      },
+      {
+        "date": "10/05/2019",
+        "numSteps": 2280,
+        "minutesActive": 235,
+        "flightsOfStairs": 36
+      },
+      {
+        "date": "11/05/2019",
+        "numSteps": 4483,
+        "minutesActive": 75,
+        "flightsOfStairs": 29
+      },
+      {
+        "date": "12/05/2019",
+        "numSteps": 2420,
+        "minutesActive": 121,
+        "flightsOfStairs": 22
+      },
+      {
+        "date": "13/05/2019",
+        "numSteps": 2280,
+        "minutesActive": 235,
+        "flightsOfStairs": 36
+      },
+      {
+        "date": "14/05/2019",
+        "numSteps": 4483,
+        "minutesActive": 75,
+        "flightsOfStairs": 29
       }
     ]
   }

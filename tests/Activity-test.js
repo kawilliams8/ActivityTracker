@@ -2,8 +2,9 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Activity = require('../src/Activity')
+const ActivityRepository = require('../src/ActivityRepository')
 
-describe('activity', function() {
+describe('Activity', function() {
 
 	it('Should be a function', function() {
 		expect(Activity).to.be.a('function');
@@ -13,4 +14,20 @@ describe('activity', function() {
 		const activity = new Activity();
 		expect(activity).to.be.an.instanceOf(Activity);
 	});
+
+	it('Should calculate the average minutes active for a user in a week', function() {
+		const activityRepo = new ActivityRepository('../data/proxy-activity');
+		expect(activityRepo.returnActivity(3).returnAvgActiveWeek("14/05/2019")).to.eql(134);
+	});
+
+	it('Should find a users alltime stair climbing record', function() {
+		const activityRepo = new ActivityRepository('../data/proxy-activity');
+		expect(activityRepo.returnActivity(3).returnStairRecord()).to.eql(36);
+	});
+
+	it('Should return number of active minutes for a given date', function() {
+		const activityRepo = new ActivityRepository('../data/proxy-activity');
+		expect(activityRepo.returnActivityGoal(3).returnActiveMinutesDay("10/05/2019")).to.eql(235);
+	});
+
 });
