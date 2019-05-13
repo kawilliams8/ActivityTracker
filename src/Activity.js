@@ -20,8 +20,8 @@ class Activity {
 		}, 0);
 	}
 
-	returnActiveMinutesDay(givenDate) {
-		return this.userActivityData.activityData.find(day => day.date === givenDate).minutesActive;
+	returnActiveDayProperty(givenDate, property) {
+		return this.userActivityData.activityData.find(day => day.date === givenDate)[property];
 	}
 }
 

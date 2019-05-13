@@ -10,7 +10,7 @@ class ActivityGoalsRepo {
 			const activity = require(this.activityFilepath).find(el => el.userID === userId);
 			return new ActivityGoal(user, activity);
 		} else {
-			const user = userData.find(el => el.userID === userId);
+			const user = userData.find(el => el.id === userId);
 			const activity = activityData.find(el => el.userID === userId);
 			return new ActivityGoal(user, activity);
 		}

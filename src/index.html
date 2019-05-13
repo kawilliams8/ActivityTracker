@@ -52,6 +52,46 @@
         <p>Your all-time average number of hours slept is <span class="p--sleep-hours"></span>.</p>
         <p>You've had <span class="p--sleep-best"></span> days with a sleep quality of 4 or higher.</p>
       </section>
+      <section class="user-activity-card">
+        <h3>Daily Activity</h3>
+        <h4>You took <span class="h4--activity-steps"></span> steps today.</h4>
+        <h4>You were active for <span class="h4--activity-minutes"></span> minutes today.</h4>
+        <h4>You walked <span class="h4--activity-miles"></span> miles today.</h4>
+        <table>
+          <tr>
+            <th>Your Activity</th>
+            <th>Average User</th>
+          </tr>
+          <tr>
+            <td class="td--activity-user">1</td>
+            <td class="td--activity-all">2</td>
+          </tr>
+          <tr>
+            <td class="td--activity-user">3</td>
+            <td class="td--activity-all">4</td>
+          </tr>
+          <tr>
+            <td class="td--activity-user">5</td>
+            <td class="td--activity-all">6</td>
+          </tr>
+        </table>
+        <ul>
+          <li class="li--sleep li--day1">Today: <span class="li--span-hours"></span> hours, Quality: <span
+              class="li--span-quality"></span> out of 5</li>
+          <li class="li--sleep li--day2">Yesterday: <span class="li--span-hours"></span> hours, Quality: <span
+              class="li--span-quality"></span> out of 5</li>
+          <li class="li--sleep li--day3">2 days ago: <span class="li--span-hours"></span> hours, Quality: <span
+              class="li--span-quality"></span> out of 5</li>
+          <li class="li--sleep li--day4">3 days ago: <span class="li--span-hours"></span> hours, Quality: <span
+              class="li--span-quality"></span> out of 5</li>
+          <li class="li--sleep li--day5">4 days ago: <span class="li--span-hours"></span> hours, Quality: <span
+              class="li--span-quality"></span> out of 5</li>
+          <li class="li--sleep li--day6">5 days ago: <span class="li--span-hours"></span> hours, Quality: <span
+              class="li--span-quality"></span> out of 5</li>
+          <li class="li--sleep li--day6">6 days ago: <span class="li--span-hours"></span> hours, Quality: <span
+              class="li--span-quality"></span> out of 5</li>
+        </ul>
+      </section>
     </main>
     <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="../data/activity.js"></script>
@@ -59,10 +99,12 @@
     <script type="text/javascript" src="../data/sleep.js"></script>
     <script type="text/javascript" src="../data/users.js"></script>
     <script type="text/javascript" src="./Activity.js"></script>
-    <script type="text/javascript" src="./Hydration.js"></script>
-    <script type="text/javascript" src="./Sleep.js"></script>
+    <script type="text/javascript" src="./ActivityGoal.js"></script>
+    <script type="text/javascript" src="./ActivityGoalsRepo.js"></script>
     <script type="text/javascript" src="./ActivityRepository.js"></script>
+    <script type="text/javascript" src="./Sleep.js"></script>
     <script type="text/javascript" src="./SleepRepository.js"></script>
+    <script type="text/javascript" src="./Hydration.js"></script>
     <script type="text/javascript" src="./HydrationRepository.js"></script>
     <script type="text/javascript" src="./UserRepository.js"></script>
     <script type="text/javascript" src="./scripts.js"></script>

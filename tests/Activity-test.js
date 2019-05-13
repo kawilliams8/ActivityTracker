@@ -25,9 +25,9 @@ describe('Activity', function() {
 		expect(activityRepo.returnActivity(3).returnStairRecord()).to.eql(36);
 	});
 
-	it('Should return number of active minutes for a given date', function() {
+	it('Should return the value of a given activity property for a given date', function() {
 		const activityRepo = new ActivityRepository('../data/proxy-activity');
-		expect(activityRepo.returnActivityGoal(3).returnActiveMinutesDay("10/05/2019")).to.eql(235);
+		expect(activityRepo.returnActivity(3).returnActiveDayProperty("10/05/2019", 'minutesActive')).to.eql(235);
 	});
 
 });
