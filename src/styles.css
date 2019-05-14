@@ -1,3 +1,13 @@
+/* font size scale: 16px, 21px, 38px, 50px, 67px 
+color scheme:
+  #0B0C10 very dark navy blue
+  #1F2833 medium navy blue
+  #C5C6C7 medium grey
+  #66FCF1 turquoise
+  #45A29E teal
+*/
+
+
 * {
   box-sizing: border-box
 }
@@ -5,47 +15,65 @@
 body, html {
   height: 100%;
   margin: 0;
-  font-family: Arial;
 }
 
-nav {
-  /*display: flex;*/
+h1, li, td {
+  font-family: 'Fira Sans', serif;
+  font-weight: 500;
+}
+
+h2, h3, h4, h5, h6, th, p {
+  font-family: 'Merriweather', serif; 
+  font-weight: 400;
+  color: #0B0C10
+}
+
+h1 {
+  font-size: 67px;
+  padding: 0px 0px 0px 20px;
+  margin: 0px;
+  color: #45A29E;
+}
+
+h2 {
+  font-size: 16px;
+  padding: 0px 0px 0px 20px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+li {
+  font-size: 21px;
+}
+
+td, th {
+  font-size: 21px;
 }
 
 ul.tabs {
   margin: 0px;
-  padding: 0px;
+  padding: 0px 20px;
   list-style: none;
 }
 
 ul.tabs li {
-  background: none;
-  color: #222;
+  background: #C5C6C7;
+  color: #1F2833;
   display: inline-block;
-  padding: 10px 15px;
+  padding: 10px 20px;
   cursor: pointer;
+  width: 24%;
 }
 
 ul.tabs li.current {
   background: #ededed;
-  color: #222;
+  color: #0B0C10;
+  text-decoration: underline #0B0C10;
 }
-
-/*.tab-link {
-  background-color: #555;
-  color: white;
-  border: solid 2px #555;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}*/
 
 .tab-link:hover {
-  background-color: #777;
+  background-color: #C5C6C7
 }
-
 
 .tab-content {
   display: none;
@@ -56,15 +84,16 @@ ul.tabs li.current {
 .tab-content.current {
   display: inherit;
 }
-/*.user-tab {
-  border: solid 2px red;
+
+footer {
+  height: 100px;
+  border-top: 10px solid #66FCF1;
+  background-color: #45A29E;
 }
-.hydration-tab {
-  border: solid 2px green;
+
+h6 {
+  font-family: 'Fira Sans', serif;
+  color: white;
+  text-align: center;
+  font-weight: 300;
 }
-.sleep-tab {
-  border: solid 2px blue;
-}
-.activity-tab {
-  border: solid 2px orange;
-}*/
