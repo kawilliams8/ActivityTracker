@@ -4,19 +4,36 @@ $(document).ready(function() {
 	const sleepRepo = new SleepRepository();
 	const activityRepo = new ActivityRepository();
 	const activityGoalsRepo = new ActivityGoalsRepo();
-	populateUserName();
 	populateUserCard();
-	displayStepGoalMessage();
-	populateTodayHydration();
 	populateHydrationCard();
 	populateSleepCard();
 	populateActivityCard();
+
+	$('ul.tabs li').on('click', openPage);
+
+
+	function openPage() {
+		let tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$('#' + tab_id).addClass('current');
+
+	}
+
+	function populateUserCard() {
+		populateUserName();
+		populateUserInfo();
+		displayStepGoalMessage();
+	}
 
 	function populateUserName() {
 		$('.h2--first-name').text(userRepo.returnUserData(3).returnFirstName() + '!');
 	}
 
-	function populateUserCard() {
+	function populateUserInfo() {
 		const spans = $.makeArray($('.li--user span'));
 		const userInfo = Object.values(userRepo.returnUserData(3).userData);
 		for (let i = 1; i < userInfo.length; i++) {
@@ -31,6 +48,11 @@ $(document).ready(function() {
 	}
 
 	function populateHydrationCard() {
+		populateHydrationInfo();
+		populateTodayHydration();
+	}
+
+	function populateHydrationInfo() {
 		const spans = $.makeArray($('.li--hydro span'));
 		const userInfo = Object.values(hydroRepo.returnHydrationUser(3).hydrationSevenDay('21/05/2019'));
 		for (let i = 0; i < userInfo.length; i++) {

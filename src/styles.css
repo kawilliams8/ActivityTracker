@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+nav {
+  /*display: flex;*/
+}
+
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+ul.tabs li {
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+ul.tabs li.current {
+  background: #ededed;
+  color: #222;
+}
+
+/*.tab-link {
+  background-color: #555;
+  color: white;
+  border: solid 2px #555;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}*/
+
+.tab-link:hover {
+  background-color: #777;
+}
+
+
+.tab-content {
+  display: none;
+  background: #ededed;
+  padding: 15px;
+}
+
+.tab-content.current {
+  display: inherit;
+}
+/*.user-tab {
+  border: solid 2px red;
+}
+.hydration-tab {
+  border: solid 2px green;
+}
+.sleep-tab {
+  border: solid 2px blue;
+}
+.activity-tab {
+  border: solid 2px orange;
+}*/
