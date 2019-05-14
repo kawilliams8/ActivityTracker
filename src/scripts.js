@@ -14,14 +14,13 @@ $(document).ready(function() {
 
 	function openPage() {
 		let tab_id = $(this).attr('data-tab');
-
 		$('ul.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
-
 		$(this).addClass('current');
 		$('#' + tab_id).addClass('current');
-
 	}
+
+
 
 	function populateUserCard() {
 		populateUserName();
@@ -135,7 +134,234 @@ $(document).ready(function() {
 		$(".h5--weekly-steps").text(activityRepo.returnAllAvgs(givenDate, 'numSteps'));
 		$(".h5--weekly-minutes").text(activityRepo.returnAllAvgs(givenDate, 'minutesActive'));
 		$(".h5--weekly-stairs").text(activityRepo.returnAllAvgs(givenDate, 'flightsOfStairs'));
-
 	}
+
+	const stepGoalBar = new Chart($('#chart--stepgoal-bar'), {
+		type: 'bar',
+		data: {
+			labels: ['Your Daily Goal', 'Average User Goal'],
+			datasets: [{
+				label: 'Daily Step Goal',
+				data: [userRepo.returnUserData(3).userData.dailyStepGoal, userRepo.calculateAvgStepGoal()],
+				backgroundColor: [
+					'#45A29E',
+					'#45A29E'
+				],
+			}]
+		},
+		options: {
+			defaultFontFamily: Chart.defaults.global.defaultFontFamily = "'Fira Sans'",
+			responsive: false,
+			maintainAspectRatio: true,
+			aspectRatio: 2,
+			scales: {
+				yAxes: [{
+					gridLines: {
+						display: false
+					},
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	})
+
+	const weeklyWaterBar = new Chart($('#chart--weeklywater-bar'), {
+		type: 'bar',
+		data: {
+			labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+			datasets: [{
+				label: 'Weekly Hydration',
+				data: Object.values(hydroRepo.returnHydrationUser(3).hydrationSevenDay('21/05/2019')),
+				backgroundColor: [
+					'#45A29E',
+					'#45A29E',
+					'#45A29E',
+					'#45A29E',
+					'#45A29E',
+					'#45A29E',
+					'#C5C6C7'
+				]
+			}]
+		},
+		options: {
+			defaultFontFamily: Chart.defaults.global.defaultFontFamily = "'Fira Sans'",
+			responsive: false,
+			maintainAspectRatio: true,
+			aspectRatio: 2,
+			scales: {
+				yAxes: [{
+					gridLines: {
+						display: false
+					},
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	})
+
+	const weeklySleepRadar = new Chart($('#chart--weeklysleep-radar'), {
+		type: 'radar',
+		data: {
+			labels: ['Today', 'Yesterday', '2 Days', '3 Days', '4 Days', '5 Days', '6 Days'],
+			datasets: [{
+				label: 'Sleep Hours',
+				data: Object.values(sleepRepo.returnSleep(3).returnSleepWeek('21/05/2019')),
+				backgroundColor: [
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)'
+				]
+			},
+			{
+				label: 'Sleep Quality',
+				data: Object.values(sleepRepo.returnSleep(3).returnQualWeek('21/05/2019')),
+				backgroundColor: [
+					'rgba(207, 15, 11, .3)',
+					'rgba(207, 15, 11, .3)',
+					'rgba(207, 15, 11, .3)',
+					'rgba(207, 15, 11, .3)',
+					'rgba(207, 15, 11, .3)',
+					'rgba(207, 15, 11, .3)',
+					'rgba(207, 15, 11, .3)'
+				]
+			}]
+		},
+		options: {
+			defaultFontFamily: Chart.defaults.global.defaultFontFamily = "'Fira Sans'",
+			responsive: false,
+			maintainAspectRatio: true,
+			aspectRatio: 2,
+			scales: {
+				yAxes: [{
+					gridLines: {
+						display: false
+					},
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	})
+
+	const weeklyActivityHorBar1 = new Chart($('#chart--weeklyactivity-horbar1'), {
+		type: 'horizontalBar',
+		data: {
+			labels: ['Steps Taken'],
+			datasets: [{
+				label: 'Your Activity',
+				data: [activityRepo.returnActivity(3).returnActiveDayProperty('21/05/2019', 'numSteps')],
+				backgroundColor: [
+					'rgba(11, 204, 207, .3)',
+				]
+			},
+			{
+				label: 'Avg User Activity',
+				data: [activityRepo.returnAllAvgs('21/05/2019', 'numSteps')],
+				backgroundColor: [
+					'rgba(207, 15, 11, .3)',
+				]
+			}]
+		},
+		options: {
+			defaultFontFamily: Chart.defaults.global.defaultFontFamily = "'Fira Sans'",
+			responsive: false,
+			maintainAspectRatio: true,
+			aspectRatio: 2,
+			scales: {
+				xAxes: [{
+					gridLines: {
+						display: false
+					},
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	})
+
+	const weeklyActivityHorBar2 = new Chart($('#chart--weeklyactivity-horbar2'), {
+		type: 'horizontalBar',
+		data: {
+			labels: ['Minutes Active'],
+			datasets: [{
+				label: 'Your Activity',
+				data: [activityRepo.returnActivity(3).returnActiveDayProperty('21/05/2019', 'minutesActive'),],
+				backgroundColor: [
+					'rgba(11, 204, 207, .3)'
+				]
+			},
+			{
+				label: 'Avg User Activity',
+				data: [activityRepo.returnAllAvgs('21/05/2019', 'minutesActive')],
+				backgroundColor: [
+					'rgba(207, 15, 11, .3)'
+				]
+			}]
+		},
+		options: {
+			defaultFontFamily: Chart.defaults.global.defaultFontFamily = "'Fira Sans'",
+			responsive: false,
+			maintainAspectRatio: true,
+			aspectRatio: 2,
+			scales: {
+				xAxes: [{
+					gridLines: {
+						display: false
+					},
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	})
+
+	const weeklyActivityHorBar3 = new Chart($('#chart--weeklyactivity-horbar3'), {
+		type: 'horizontalBar',
+		data: {
+			labels: ['Flights Climbed'],
+			datasets: [{
+				label: 'Your Activity',
+				data: [activityRepo.returnActivity(3).returnActiveDayProperty('21/05/2019', 'flightsOfStairs')],
+				backgroundColor: [
+					'rgba(11, 204, 207, .3)'
+				]
+			},
+			{
+				label: 'Avg User Activity',
+				data: [activityRepo.returnAllAvgs('21/05/2019', 'flightsOfStairs')],
+				backgroundColor: [
+					'rgba(207, 15, 11, .3)'
+				]
+			}]
+		},
+		options: {
+			defaultFontFamily: Chart.defaults.global.defaultFontFamily = "'Fira Sans'",
+			responsive: false,
+			maintainAspectRatio: true,
+			aspectRatio: 2,
+			scales: {
+				xAxes: [{
+					gridLines: {
+						display: false
+					},
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	})
+
 
 })

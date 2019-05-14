@@ -27,16 +27,16 @@ describe('activityRepository', function() {
 
 	it('Should return the average stairs climbed for all users on a given date', function () {
 		const activityRepo = new ActivityRepository('../data/proxy-activity');
-		expect(activityRepo.returnAllAvgs("06/05/2019", 'flightsOfStairs')).to.eql(23);
+		expect(activityRepo.returnAllAvgs("06/05/2019", 'flightsOfStairs')).to.eql(25);
 	});
 
 	it('Should return the average number of steps for all users on a given date', function () {
 		const activityRepo = new ActivityRepository('../data/proxy-activity');
-		expect(activityRepo.returnAllAvgs("06/05/2019", 'numSteps')).to.eql(6296);
+		expect(activityRepo.returnAllAvgs("06/05/2019", 'numSteps')).to.eql(14364);
 	});
 
 	it('Should return the average number minutes active for all users on a given date', function () {
 		const activityRepo = new ActivityRepository('../data/proxy-activity');
-		expect(activityRepo.returnAllAvgs("06/05/2019", 'minutesActive')).to.eql(176);
+		expect(activityRepo.returnAllAvgs("06/05/2019", 'minutesActive')).to.eql(283);
 	});
 }) 

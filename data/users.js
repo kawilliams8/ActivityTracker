@@ -17,9 +17,9 @@ const userData = [
   },
   {
     "id": 3,
-    "name": "Cleo Lindgren",
-    "address": "744 Josephine Parkway, Hellerside OH 17625",
-    "email": "Zachery.Von49@gmail.com",
+    "name": "Robbie Jaeger",
+    "address": "744 Josephine Parkway, Denver CO 17625",
+    "email": "RobbieMcJaeger@aol.com",
     "strideLength": 5.1,
     "dailyStepGoal": 4000
   },

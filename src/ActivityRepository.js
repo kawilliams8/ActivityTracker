@@ -17,17 +17,24 @@ class ActivityRepository {
 
 	returnAllAvgs(givenDate, property) {
 		return Math.round(this.instantiateActivities().reduce((final, user) => {
-			const todayIndex = user.userActivityData.activityData.findIndex(el => el.date === givenDate);
-			const avgStairs = user.userActivityData.activityData.reduce((sum, el, index) => {
-				if (index <= todayIndex && index >= todayIndex - 6) {
-					sum += el[property];
-				}
-				return sum;
-			}, 0)
-			final += avgStairs;
+			final += user.userActivityData.activityData.find(day => day.date === givenDate)[property];
 			return final;
 		}, 0) / (this.instantiateActivities().length));
 	}
+
+	// returnAllAvgs(givenDate, property) {
+	// 	return Math.round(this.instantiateActivities().reduce((final, user) => {
+	// 		const todayIndex = user.userActivityData.activityData.findIndex(el => el.date === givenDate);
+	// 		const avgStairs = user.userActivityData.activityData.reduce((sum, el, index) => {
+	// 			if (index <= todayIndex && index >= todayIndex - 6) {
+	// 				sum += el[property];
+	// 			}
+	// 			return sum;
+	// 		}, 0)
+	// 		final += avgStairs;
+	// 		return final;
+	// 	}, 0) / (this.instantiateActivities().length));
+	// }
 
 
 }

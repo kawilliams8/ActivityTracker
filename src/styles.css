@@ -3,6 +3,7 @@ color scheme:
   #0B0C10 very dark navy blue
   #1F2833 medium navy blue
   #C5C6C7 medium grey
+  #ededed light grey
   #66FCF1 turquoise
   #45A29E teal
 */
@@ -17,7 +18,40 @@ body, html {
   margin: 0;
 }
 
-h1, li, td {
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+}
+
+section {
+  border-radius: 3px 3px 0px 0px;
+  height: 800px;
+}
+
+figure {
+  height: 400px;
+  width: 400px;
+}
+
+h1 {
+  font-family: 'Fira Sans', serif;
+  font-weight: 500;
+  vertical-align: middle;
+  font-style: italic;
+}
+
+.h1--span {
+  font-weight: 100;
+  font-style: italic;
+}
+
+h1 img {
+  height: 47px;
+  margin-right: 5px;
+}
+
+li, td {
   font-family: 'Fira Sans', serif;
   font-weight: 500;
 }
@@ -36,10 +70,12 @@ h1 {
 }
 
 h2 {
-  font-size: 16px;
-  padding: 0px 0px 0px 20px;
+  font-size: 21px;
+  padding: 30px 20px 30px 20px;
   margin-top: 0px;
   margin-bottom: 10px;
+  border-top: 2px solid #ededed;
+ /* text-align: right; */
 }
 
 li {
@@ -54,15 +90,19 @@ ul.tabs {
   margin: 0px;
   padding: 0px 20px;
   list-style: none;
+  display: flex;
+  justify-content: space-between;
 }
 
 ul.tabs li {
+  margin: 0px 3px;
   background: #C5C6C7;
+  border-radius: 3px 3px 0px 0px;
   color: #1F2833;
-  display: inline-block;
+  /* display: inline-block; */
   padding: 10px 20px;
   cursor: pointer;
-  width: 24%;
+  width: 25%;
 }
 
 ul.tabs li.current {
@@ -71,8 +111,8 @@ ul.tabs li.current {
   text-decoration: underline #0B0C10;
 }
 
-.tab-link:hover {
-  background-color: #C5C6C7
+.tabs li:hover {
+  background-color:#45A29E;
 }
 
 .tab-content {
@@ -85,8 +125,14 @@ ul.tabs li.current {
   display: inherit;
 }
 
+#chart--stepgoal-bar {
+  /* height: 400px; */
+  /* width: 200px; */
+}
+
 footer {
   height: 100px;
+  margin-top: 20px;
   border-top: 10px solid #66FCF1;
   background-color: #45A29E;
 }

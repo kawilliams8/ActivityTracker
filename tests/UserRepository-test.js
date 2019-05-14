@@ -21,7 +21,7 @@ describe('UserRepository', function() {
 
 	it('Should return user data object based on userId and data file', function() {
 		const userRepository = new UserRepository('../data/proxy-users');
-		expect(userRepository.returnUserData(5).userData.name).to.eql("Cleo Lindgren");
+		expect(userRepository.returnUserData(5).userData.name).to.eql("Robbie Jaeger");
 	})
 
 	it('Should calculate and return the average step goal for all users', function() {
