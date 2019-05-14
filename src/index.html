@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Activity Tracker</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
   </head>
   <body>
@@ -13,13 +15,13 @@
     </header>
     <main>
       <ul class="tabs">
-        <li class="tab-link current" data-tab="tab-1">Profile</li>
-        <li class="tab-link" data-tab="tab-2">Hydration</li>
-        <li class="tab-link" data-tab="tab-3">Sleep</li>
-        <li class="tab-link" data-tab="tab-4">Activity</li>
+        <li class="current" data-tab="tab-1">Profile</li>
+        <li data-tab="tab-2">Hydration</li>
+        <li data-tab="tab-3">Sleep</li>
+        <li data-tab="tab-4">Activity</li>
       </ul>
       <section id="tab-1" class="user-info-card user-tab tab-content current">
-        <h3>Your Info</h3>
+        <h3>Profile Information</h3>
         <ul>
           <li class="li--user li--name">Name: <span></span></li>
           <li class="li--user li--address">Address: <span></span></li>
@@ -30,7 +32,7 @@
         <p class="step-goal-message"></p>
       </section>
       <section id="tab-2" class="user-hydration-card hydration-tab tab-content">
-        <h3>Daily Hydration</h3>
+        <h3>Daily Hydration Report</h3>
         <h4>You drank <span class="h4--hydration"></span>oz today</h4>
         <ul>
           <li class="li--hydro li--day1">Today: <span></span>oz</li>
@@ -43,7 +45,7 @@
         </ul>
       </section>
       <section id="tab-3" class="user-sleep-card sleep-tab tab-content">
-        <h3>Daily Sleep</h3>
+        <h3>Daily Sleep Report</h3>
         <h4>You slept <span class="h4--sleep-hours"></span> hours today; your sleep quality rating was <span class="h4--sleep-quality"></span>!</h4>
         <ul>
           <li class="li--sleep li--day1">Today: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
@@ -59,7 +61,7 @@
         <p>You've had <span class="p--sleep-best"></span> days with a sleep quality of 4 or higher.</p>
       </section>
       <section id="tab-4" class="user-activity-card activity-tab tab-content">
-        <h3>Daily Activity</h3>
+        <h3>Daily Activity Report</h3>
         <h4>You took <span class="h4--activity-steps"></span> steps today.</h4>
         <h4>You were active for <span class="h4--activity-minutes"></span> minutes today.</h4>
         <h4>You walked <span class="h4--activity-miles"></span> miles today.</h4>
@@ -85,6 +87,9 @@
         <h5>You were active for <span class="h5--weekly-minutes"></span> minutes this week.</h5>
         <h5>You climbed <span class="h5--weekly-stairs"></span> flights of stairs this week.</h5>
     </main>
+    <footer>
+      <h6>Copyright 2019</h6>
+    </footer>
     <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="../data/activity.js"></script>
     <script type="text/javascript" src="../data/hydration.js"></script>
