@@ -78,7 +78,7 @@ $(document).ready(function() {
 		populateActivityTitles(".h4--activity-steps", '21/05/2019', 'numSteps');
 		populateActivityTitles(".h4--activity-minutes",'21/05/2019', 'minutesActive');
 		populateMilesTitle('21/05/2019');
-		populateActivityTable();
+		populateActivityTable('21/05/2019');
 		populateActivityWeek('21/05/2019');
 	}
 
@@ -90,11 +90,7 @@ $(document).ready(function() {
 		$(".h4--activity-miles").text(activityGoalsRepo.returnActivityGoal(3).returnStepsToMiles(givenDate));
 	}
 
-	function populateActivityTable() {
-
-	}
-
-	function populateActivityWeek(givenDate) {
+	function populateActivityTable(givenDate) {
 		const userStat = $.makeArray($('.td--activity-user'));
 		const avgStat = $.makeArray($('.td--activity-all'));
 		const userData = [
@@ -111,6 +107,13 @@ $(document).ready(function() {
 			$(userStat[i]).text(userData[i]);
 			$(avgStat[i]).text(avgData[i]);
 		}
+	}
+
+	function populateActivityWeek(givenDate) {
+		$(".h5--weekly-steps").text(activityRepo.returnAllAvgs(givenDate, 'numSteps'));
+		$(".h5--weekly-minutes").text(activityRepo.returnAllAvgs(givenDate, 'minutesActive'));
+		$(".h5--weekly-stairs").text(activityRepo.returnAllAvgs(givenDate, 'flightsOfStairs'));
+
 	}
 
 })

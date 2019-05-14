@@ -3,11 +3,11 @@ class Activity {
 		this.userActivityData = userActivityData;
 	}
 
-	returnAvgActiveWeek(givenDate) {
+	returnAvgActiveWeek(givenDate, property) {
 		const todayIndex = this.userActivityData.activityData.findIndex(day => day.date === givenDate);
 		return Math.round(this.userActivityData.activityData.reduce((total, day, index) => {
 			if (index <= todayIndex && index >= todayIndex - 6) {
-				total += day.minutesActive;
+				total += day[property];
 			}
 			return total
 		}, 0) / 7);
