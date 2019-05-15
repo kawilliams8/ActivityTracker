@@ -13,8 +13,13 @@
   <body>
     <header>
       <h1><img src="../images/logo.svg" alt="Activity Tracker logo"> ACTIVITY<span class="h1--span">TRACKER</span></h1>
-      <h2>Welcome, <span class="h2--first-name"></span></h2>
+      <nav class="nav--icon-container">
+        <img src="../images/gear.svg" class="nav--account-icons" alt="Account settings icon">
+        <img src="../images/notification.svg" class="nav--account-icons" alt="Account alerts icon">
+        <img src="../images/upload.svg" class="nav--account-icons" alt="Activity upload icon">
+      </nav>
     </header>
+    <h2>Welcome, <span class="h2--first-name"></span></h2>
     <main>
       <ul class="tabs">
         <li class="current" data-tab="tab-1"><img src="../images/user.svg" class="tab--logo" alt="Profile tab logo"><p>Profile</p></li>
@@ -32,7 +37,7 @@
           <li class="li--user li--daily-step-goal">Daily Step Goal: <span></span></li>
         </ul>
         <figure>
-          <canvas id="chart--stepgoal-bar"></canvas>
+          <canvas id="chart--stepgoal-bar" height="400px" width="400px"></canvas>
         </figure>
 <!--         <figure>
           <canvas id="chart--all-time-water-polar"></canvas>
@@ -52,7 +57,7 @@
           <li class="li--hydro li--day6">6 days ago: <span></span>oz</li>
         </ul>
         <figure>
-          <canvas id="chart--weeklywater-bar"></canvas>
+          <canvas id="chart--weeklywater-bar" height="400px" width="400px"></canvas>
         </figure>
         <figure>
           <canvas id="chart--all-time-water-polar"></canvas>
@@ -71,7 +76,7 @@
           <li class="li--sleep li--day6">6 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
         </ul>
         <figure>
-          <canvas id="chart--weeklysleep-radar"></canvas>
+          <canvas id="chart--weeklysleep-radar" height="400px" width="400px"></canvas>
         </figure>
         <p>Your all-time average sleep quality is <span class="p--sleep-quality"></span> out of 5.</p>
         <p>Your all-time average number of hours slept is <span class="p--sleep-hours"></span>.</p>
@@ -80,13 +85,13 @@
       <section id="tab-4" class="user-activity-card activity-tab tab-content">
         <h3>Activity Report</h3>
         <figure>
-          <canvas id="chart--weeklyactivity-horbar1"></canvas>
+          <canvas id="chart--weeklyactivity-horbar1" height="400px" width="400px"></canvas>
         </figure>
         <figure>
-          <canvas id="chart--weeklyactivity-horbar2"></canvas>
+          <canvas id="chart--weeklyactivity-horbar2" height="400px" width="400px"></canvas>
         </figure>
         <figure>
-          <canvas id="chart--weeklyactivity-horbar3"></canvas>
+          <canvas id="chart--weeklyactivity-horbar3" height="400px" width="400px"></canvas>
         </figure>
         <h4>You took <span class="h4--activity-steps"></span> steps today.</h4>
         <h4>You were active for <span class="h4--activity-minutes"></span> minutes today.</h4>
@@ -114,7 +119,14 @@
         <h5>You climbed <span class="h5--weekly-stairs"></span> flights of stairs this week.</h5>
     </main>
     <footer>
-      <h6>Copyright 2019</h6>
+      <h6>Share your activities with friends!</h5>
+      <section class="footer--logos">
+        <a href="http://www.instagram.com" target="_blank"><img src="../images/instagram.svg" alt="Instagram logo"></a>
+        <a href="http://www.twitter.com" target="_blank"><img src="../images/twitter.svg" alt="Twitter logo"></a>
+        <a href="http://www.facebook.com" target="_blank"><img src="../images/facebook.svg" alt="Facebook logo"></a>
+        <a href="http://www.linkedin.com" target="_blank"><img src="../images/linkedin.svg" alt="LinkedIn logo"></a>
+      </section>
+      <h6 class="footer--copyright">Copyright &#9400; 2019</h6>
     </footer>
     <script type="text/javascript" src="./User.js"></script>
     <script type="text/javascript" src="../data/activity.js"></script>
