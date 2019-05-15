@@ -15,6 +15,15 @@ class HydrationRepository {
     return this.instantiateHydrations().find(hyd => hyd.userHydrationData.userID === userId);
   }
 
+  returnAvgHydrationRecord() {
+    return Math.round(this.instantiateHydrations().reduce((totalHydration, user) => {
+      const userSum = user.userHydrationData.hydrationData.reduce((sum, day) => {
+        return sum += day.numOunces;
+      }, 0) / user.userHydrationData.hydrationData.length;
+      return totalHydration += userSum;
+    }, 0) / this.instantiateHydrations().length);
+  }
+
 }
 
 if (typeof module !== 'undefined') {

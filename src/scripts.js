@@ -203,6 +203,36 @@ $(document).ready(function() {
 		}
 	})
 
+	const hydrationRecordPolar = new Chart($('#chart--all-time-water-polar'), {
+		type: 'polarArea',
+		data: {
+			labels: ['Your record', 'Today\'s Hydration', 'Avg User Record'],
+			datasets: [{
+				data: [hydroRepo.returnHydrationUser(3).returnHydrationRecord(), hydroRepo.returnHydrationUser(3).hydrationDay('21/05/2019'), hydroRepo.returnAvgHydrationRecord()],
+				backgroundColor: [
+					'rgba(11, 204, 207, .3)',
+					'rgba(207, 15, 11, .5)',
+					'rgba(207, 100, 11, .7)'
+				]
+			}],
+  		options: {
+        responsive: false,
+        title: {
+            display: true,
+            text: 'Chart.js'
+        },
+        scales: {
+            xAxes: [{
+                display: true
+            }],
+            yAxes: [{
+                display: true
+            }]
+        }
+    	}
+		}
+	})
+
 	const weeklySleepRadar = new Chart($('#chart--weeklysleep-radar'), {
 		type: 'radar',
 		data: {
