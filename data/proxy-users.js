@@ -25,7 +25,7 @@ const proxyUserData = [
   },
   {
     "id": 4,
-    "name": "Shayne Swift",
+    "name": "Steve Rumizen",
     "address": "747 Dickinson Gardens, South Helga CO 88484-2240",
     "email": "Lawson74@yahoo.com",
     "strideLength": 4.5,
@@ -33,7 +33,7 @@ const proxyUserData = [
   },
   {
     "id": 5,
-    "name": "Cleo Lindgren",
+    "name": "Katie Williams",
     "address": "744 Josephine Parkway, Hellerside MA 17625",
     "email": "Zachery.Von49@gmail.com",
     "strideLength": 5.1,

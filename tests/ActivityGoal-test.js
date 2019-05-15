@@ -35,4 +35,19 @@ describe('ActivityGoal', function() {
 		expect(activityGoalsRepo.returnActivityGoal(3).returnStepsToMiles("11/05/2019")).to.eql(4.33);
 	});
 
+	it('Should return all the friends total step count for a given week', function() {
+		const activityGoalsRepo = new ActivityGoalsRepo('../data/proxy-users', '../data/proxy-activity');
+		expect(activityGoalsRepo.returnActivityGoal(1).returnFriendStepCount('13/05/2019')[0].name).to.eql('Shayne Swift');
+	})
+
+	it('Should return the users total step count for a given week', function() {
+		const activityGoalsRepo = new ActivityGoalsRepo('../data/proxy-users', '../data/proxy-activity');
+		expect(activityGoalsRepo.returnActivityGoal(1).returnUserStepCount('13/05/2019').name).to.eql('Nyasia Weber');
+	})
+
+	it('Should return the friend with the highest step count for the given week', function() {
+		const activityGoalsRepo = new ActivityGoalsRepo('../data/proxy-users', '../data/proxy-activity');
+		expect(activityGoalsRepo.returnActivityGoal(1).returnBestFriend('13/05/2019')).to.eql('Steve Rumizen');
+	});
+
 });

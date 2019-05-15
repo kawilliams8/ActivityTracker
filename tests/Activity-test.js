@@ -17,7 +17,7 @@ describe('Activity', function() {
 
 	it('Should calculate the average minutes active for a user in a week', function() {
 		const activityRepo = new ActivityRepository('../data/proxy-activity');
-		expect(activityRepo.returnActivity(3).returnAvgActiveWeek("14/05/2019")).to.eql(134);
+		expect(activityRepo.returnActivity(3).returnAvgActiveWeek('14/05/2019', 'minutesActive', 7)).to.eql(134);
 	});
 
 	it('Should find a users alltime stair climbing record', function() {

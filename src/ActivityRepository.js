@@ -9,9 +9,9 @@ class ActivityRepository {
 
 	instantiateActivities() {
 		if (typeof module !== 'undefined') {
-			return require(this.dataFilepath).map(user => new Activity(user));
+			return require(this.dataFilepath).map((user, index, array) => new Activity(user, array.filter(friend => friend.userID > index && friend.userID < index + 4)));
 		} else {
-			return activityData.map(user => new Activity(user));
+			return activityData.map((user, index, array) => new Activity(user, array.filter(friend => friend.userID > index && friend.userID < index + 4)));
 		}
 	}
 
