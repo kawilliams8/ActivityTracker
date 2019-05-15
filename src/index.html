@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <header>
@@ -16,10 +17,10 @@
     </header>
     <main>
       <ul class="tabs">
-        <li class="current" data-tab="tab-1">Profile</li>
-        <li data-tab="tab-2">Hydration</li>
-        <li data-tab="tab-3">Sleep</li>
-        <li data-tab="tab-4">Activity</li>
+        <li class="current" data-tab="tab-1"><img src="../images/user.svg" class="tab--logo" alt="Profile tab logo"><p>Profile</p></li>
+        <li data-tab="tab-2"><img src="../images/hydration.svg" class="tab--logo" alt="Hydration tab logo"><p>Hydration</p></li>
+        <li data-tab="tab-3"><img src="../images/sleep.svg" class="tab--logo" alt="Sleep tab logo"><p>Sleep</p></li>
+        <li data-tab="tab-4"><img src="../images/activity.svg" class="tab--logo" alt="Activity tab logo"><p>Activity</p></li>
       </ul>
       <section id="tab-1" class="user-info-card user-tab tab-content current">
         <h3>Profile Information</h3>
@@ -33,12 +34,12 @@
         <figure>
           <canvas id="chart--stepgoal-bar"></canvas>
         </figure>
-        <!-- <p class="step-goal-message"></p> -->
+        <p class="step-goal-message"></p>
       </section>
       <section id="tab-2" class="user-hydration-card hydration-tab tab-content">
         <h3>Hydration Report</h3>
         <h4>You drank <span class="h4--hydration"></span>oz today</h4>
-        <!-- <ul>
+        <ul>
           <li class="li--hydro li--day1">Today: <span></span>oz</li>
           <li class="li--hydro li--day2">Yesterday: <span></span>oz</li>
           <li class="li--hydro li--day3">2 days ago: <span></span>oz</li>
@@ -46,7 +47,7 @@
           <li class="li--hydro li--day5">4 days ago: <span></span>oz</li>
           <li class="li--hydro li--day6">5 days ago: <span></span>oz</li>
           <li class="li--hydro li--day6">6 days ago: <span></span>oz</li>
-        </ul> -->
+        </ul>
         <figure>
           <canvas id="chart--weeklywater-bar"></canvas>
         </figure>
@@ -54,7 +55,7 @@
       <section id="tab-3" class="user-sleep-card sleep-tab tab-content">
         <h3>Sleep Report</h3>
         <h4>You slept <span class="h4--sleep-hours"></span> hours today; your sleep quality rating was <span class="h4--sleep-quality"></span>!</h4>
-        <!-- <ul>
+        <ul>
           <li class="li--sleep li--day1">Today: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
           <li class="li--sleep li--day2">Yesterday: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
           <li class="li--sleep li--day3">2 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
@@ -62,7 +63,7 @@
           <li class="li--sleep li--day5">4 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
           <li class="li--sleep li--day6">5 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
           <li class="li--sleep li--day6">6 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
-        </ul> -->
+        </ul>
         <figure>
           <canvas id="chart--weeklysleep-radar"></canvas>
         </figure>
