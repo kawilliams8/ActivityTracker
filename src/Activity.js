@@ -23,6 +23,23 @@ class Activity {
 	returnActiveDayProperty(givenDate, property) {
 		return this.userActivityData.activityData.find(day => day.date === givenDate)[property];
 	}
+
+	returnStepStreaks() {
+		let streak = [];
+		return this.userActivityData.activityData.reduce((streaks, day, index, array) => {
+			if (streak.length === 0) {
+				streak.push(day);
+			} else if (index > 0 && day.numSteps > array[index -1].numSteps) {
+				streak.push(day);
+			} else if (index > 0 && day.numSteps <= array[index -1].numSteps && streak.length > 2) {
+				streaks.push(streak);
+				streak = [];
+			} else {
+				streak = [];
+			}
+			return streaks;
+		}, []);
+	}
 }
 
 if (typeof module !== 'undefined') {

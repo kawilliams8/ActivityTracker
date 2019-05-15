@@ -30,4 +30,9 @@ describe('Activity', function() {
 		expect(activityRepo.returnActivity(3).returnActiveDayProperty("10/05/2019", 'minutesActive')).to.eql(235);
 	});
 
+	it('Should return an array of arrays that contain streaks of increasing steps', function() {
+		const activityRepo = new ActivityRepository('../data/proxy-activity');
+		expect(activityRepo.returnActivity(8).returnStepStreaks().length).to.eql(2);		
+	});
+
 });

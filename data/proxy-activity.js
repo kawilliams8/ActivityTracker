@@ -700,6 +700,119 @@ const proxyActivityData = [
       }
     ]
   },
+  {
+    "userID": 8,
+    "activityData": [
+      {
+        "date": "06/05/2019",
+        "numSteps": 4384,
+        "minutesActive": 296,
+        "flightsOfStairs": 9
+      },
+      {
+        "date": "07/05/2019",
+        "numSteps": 5000,
+        "minutesActive": 191,
+        "flightsOfStairs": 42
+      },
+      {
+        "date": "08/05/2019",
+        "numSteps": 6000,
+        "minutesActive": 230,
+        "flightsOfStairs": 5
+      },
+      {
+        "date": "09/05/2019",
+        "numSteps": 7000,
+        "minutesActive": 223,
+        "flightsOfStairs": 37
+      },
+      {
+        "date": "10/05/2019",
+        "numSteps": 2000,
+        "minutesActive": 144,
+        "flightsOfStairs": 22
+      },
+      {
+        "date": "11/05/2019",
+        "numSteps": 3000,
+        "minutesActive": 102,
+        "flightsOfStairs": 47
+      },
+      {
+        "date": "12/05/2019",
+        "numSteps": 4000,
+        "minutesActive": 189,
+        "flightsOfStairs": 21
+      },
+      {
+        "date": "13/05/2019",
+        "numSteps": 1000,
+        "minutesActive": 103,
+        "flightsOfStairs": 16
+      },
+      {
+        "date": "14/05/2019",
+        "numSteps": 2000,
+        "minutesActive": 119,
+        "flightsOfStairs": 49
+      },
+      {
+        "date": "15/05/2019",
+        "numSteps": 3000,
+        "minutesActive": 185,
+        "flightsOfStairs": 44
+      },
+      {
+        "date": "16/05/2019",
+        "numSteps": 4000,
+        "minutesActive": 272,
+        "flightsOfStairs": 6
+      },
+      {
+        "date": "17/05/2019",
+        "numSteps": 5000,
+        "minutesActive": 120,
+        "flightsOfStairs": 29
+      },
+      {
+        "date": "18/05/2019",
+        "numSteps": 6000,
+        "minutesActive": 247,
+        "flightsOfStairs": 26
+      },
+      {
+        "date": "19/05/2019",
+        "numSteps": 7000,
+        "minutesActive": 260,
+        "flightsOfStairs": 37
+      },
+      {
+        "date": "20/05/2019",
+        "numSteps": 8000,
+        "minutesActive": 23,
+        "flightsOfStairs": 2
+      },
+      {
+        "date": "21/05/2019",
+        "numSteps": 9000,
+        "minutesActive": 245,
+        "flightsOfStairs": 2
+      },
+      {
+        "date": "22/05/2019",
+        "numSteps": 6818,
+        "minutesActive": 149,
+        "flightsOfStairs": 2
+      },
+      {
+        "date": "23/05/2019",
+        "numSteps": 10271,
+        "minutesActive": 97,
+        "flightsOfStairs": 47
+      }
+    ]
+  }
 ]
 
 module.exports = proxyActivityData;

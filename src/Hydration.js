@@ -22,6 +22,13 @@ class Hydration {
   	}
   	return dayObj;
   }
+
+  returnHydrationRecord() {
+    return this.userHydrationData.hydrationData.reduce((record, day) => {
+      day.numOunces > record ? record = day.numOunces : record;
+      return record;
+    }, 0)
+  }
 }
 
 if (typeof module !== 'undefined') {
