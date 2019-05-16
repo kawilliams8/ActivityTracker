@@ -32,7 +32,7 @@ describe('Activity', function() {
 
 	it('Should return an array of arrays that contain streaks of increasing steps', function() {
 		const activityRepo = new ActivityRepository('../data/proxy-activity');
-		expect(activityRepo.returnActivity(8).returnStepStreaks().length).to.eql(2);		
+		expect(activityRepo.returnActivity(8).returnStepStreaks()).to.eql(2);		
 	});
 
 });

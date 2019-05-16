@@ -43,10 +43,10 @@ class ActivityGoal {
 		}, [])
 	}
 
-	returnBestFriend(givenDate) {
+	returnBestFriends(givenDate) {
 		const stepTotals = this.returnFriendStepCount(givenDate);
 		stepTotals.push(this.returnUserStepCount(givenDate));
-		return stepTotals.sort((a, b) => b.totalSteps - a.totalSteps)[0].name;
+		return stepTotals.sort((a, b) => b.totalSteps - a.totalSteps);
 	}
 }
 

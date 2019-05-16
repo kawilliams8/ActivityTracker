@@ -45,9 +45,9 @@ describe('ActivityGoal', function() {
 		expect(activityGoalsRepo.returnActivityGoal(1).returnUserStepCount('13/05/2019').name).to.eql('Nyasia Weber');
 	})
 
-	it('Should return the friend with the highest step count for the given week', function() {
+	it('Should return all friends step counts for the given week', function() {
 		const activityGoalsRepo = new ActivityGoalsRepo('../data/proxy-users', '../data/proxy-activity');
-		expect(activityGoalsRepo.returnActivityGoal(1).returnBestFriend('13/05/2019')).to.eql('Steve Rumizen');
+		expect(activityGoalsRepo.returnActivityGoal(1).returnBestFriends('13/05/2019').length).to.eql(4);
 	});
 
 });

@@ -29,94 +29,105 @@
       </ul>
       <section id="tab-1" class="user-info-card user-tab tab-content current">
         <h3>Profile Information</h3>
-        <ul>
-          <li class="li--user li--name">Name: <span></span></li>
-          <li class="li--user li--address">Address: <span></span></li>
-          <li class="li--user li--email">Email: <span></span></li>
-          <li class="li--user li--stride-length">Stride Length: <span></span></li>
-          <li class="li--user li--daily-step-goal">Daily Step Goal: <span></span></li>
-        </ul>
-        <figure>
+        <article class="article--user-text">
+          <ul class="ul--user-list">
+            <li class="li--user li--name">Name: <span></span></li>
+            <li class="li--user li--address">Address: <span></span></li>
+            <li class="li--user li--email">Email: <span></span></li>
+            <li class="li--user li--stride-length">Stride Length: <span></span></li>
+            <li class="li--user li--daily-step-goal">Daily Step Goal: <span></span></li>
+          </ul>
+          <p class="step-goal-message"></p>
+        </article>
+        <figure class="user--figure">
           <canvas id="chart--stepgoal-bar" height="400px" width="400px"></canvas>
         </figure>
-<!--         <figure>
-          <canvas id="chart--all-time-water-polar"></canvas>
-        </figure> -->
-        <p class="step-goal-message"></p>
       </section>
       <section id="tab-2" class="user-hydration-card hydration-tab tab-content">
         <h3>Hydration Report</h3>
-        <h4>You drank <span class="h4--hydration"></span>oz today</h4>
-        <ul>
-          <li class="li--hydro li--day1">Today: <span></span>oz</li>
-          <li class="li--hydro li--day2">Yesterday: <span></span>oz</li>
-          <li class="li--hydro li--day3">2 days ago: <span></span>oz</li>
-          <li class="li--hydro li--day4">3 days ago: <span></span>oz</li>
-          <li class="li--hydro li--day5">4 days ago: <span></span>oz</li>
-          <li class="li--hydro li--day6">5 days ago: <span></span>oz</li>
-          <li class="li--hydro li--day6">6 days ago: <span></span>oz</li>
-        </ul>
+        <div class="hydration-box num-boxes-container num-box">
+          <h4>Today, you drank:</h4>
+          <p class="h4--hydration big-number"></p>
+          <p class="hydration-box-oz">ounces</p>
+        </div>
         <figure>
           <canvas id="chart--weeklywater-bar" height="400px" width="400px"></canvas>
         </figure>
-        <figure>
-          <canvas id="chart--all-time-water-polar"></canvas>
+        <figure class="polar-chart">
+          <canvas id="chart--all-time-water-polar" height="70px" width="70px"></canvas>
         </figure>
       </section>
       <section id="tab-3" class="user-sleep-card sleep-tab tab-content">
         <h3>Sleep Report</h3>
-        <h4>You slept <span class="h4--sleep-hours"></span> hours today; your sleep quality rating was <span class="h4--sleep-quality"></span>!</h4>
-        <ul>
-          <li class="li--sleep li--day1">Today: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
-          <li class="li--sleep li--day2">Yesterday: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
-          <li class="li--sleep li--day3">2 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
-          <li class="li--sleep li--day4">3 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
-          <li class="li--sleep li--day5">4 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
-          <li class="li--sleep li--day6">5 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
-          <li class="li--sleep li--day6">6 days ago: <span class="li--span-hours"></span> hours, Quality: <span class="li--span-quality"></span> out of 5</li>
-        </ul>
+        <div class="sleep-chart-message-container">
+        <h4 class="sleep-message-title">You slept <span class="h4--sleep-hours"></span> hours today; your sleep quality rating was <span class="h4--sleep-quality"></span></h4>
         <figure>
-          <canvas id="chart--weeklysleep-radar" height="400px" width="400px"></canvas>
+          <canvas id="chart--weeklysleep-radar" height="600px" width="600px"></canvas>
         </figure>
-        <p>Your all-time average sleep quality is <span class="p--sleep-quality"></span> out of 5.</p>
-        <p>Your all-time average number of hours slept is <span class="p--sleep-hours"></span>.</p>
-        <p>You've had <span class="p--sleep-best"></span> days with a sleep quality of 4 or higher.</p>
+      </div>
+      <div class="num-boxes-container">
+        <figure class="sleep--number-box num-box">
+          <p>All-time average sleep quality:</p>
+          <p class="p--sleep-quality big-number"></p>
+        </figure>
+        <figure class="sleep--number-box num-box">
+          <p>All-time average number of hours slept:</p>
+          <p class="p--sleep-hours big-number"></p>
+        </figure>
+        <figure class="sleep--number-box num-box">
+          <p>Days with a sleep quality of 4 or higher:</p>
+          <p class="p--sleep-best big-number"></p>
+        </figure>
+      </div>
       </section>
       <section id="tab-4" class="user-activity-card activity-tab tab-content">
         <h3>Activity Report</h3>
-        <figure>
-          <canvas id="chart--weeklyactivity-horbar1" height="400px" width="400px"></canvas>
-        </figure>
-        <figure>
-          <canvas id="chart--weeklyactivity-horbar2" height="400px" width="400px"></canvas>
-        </figure>
-        <figure>
-          <canvas id="chart--weeklyactivity-horbar3" height="400px" width="400px"></canvas>
-        </figure>
-        <h4>You took <span class="h4--activity-steps"></span> steps today.</h4>
-        <h4>You were active for <span class="h4--activity-minutes"></span> minutes today.</h4>
-        <h4>You walked <span class="h4--activity-miles"></span> miles today.</h4>
-        <table>
-          <tr>
-            <th>Your Activity</th>
-            <th>Average User</th>
-          </tr>
-          <tr>
-            <td class="td--activity-user">1</td>
-            <td class="td--activity-all">2</td>
-          </tr>
-          <tr>
-            <td class="td--activity-user">3</td>
-            <td class="td--activity-all">4</td>
-          </tr>
-          <tr>
-            <td class="td--activity-user">5</td>
-            <td class="td--activity-all">6</td>
-          </tr>
-        </table>
-        <h5>You took <span class="h5--weekly-steps"></span> steps this week.</h5>
-        <h5>You were active for <span class="h5--weekly-minutes"></span> minutes this week.</h5>
-        <h5>You climbed <span class="h5--weekly-stairs"></span> flights of stairs this week.</h5>
+        <div class="activity-left-boxes">
+          <div class="friend-board-container">
+            <figure class="streak-box">
+              <h4 class="streak-box">Leaderboard</h4>
+              <ol>
+                <li><span class="friend-name"></span><span  class="friend-steps"></span></li>
+                <li><span class="friend-name"></span><span  class="friend-steps"></span></li>
+                <li><span class="friend-name"></span><span  class="friend-steps"></span></li>
+                <li><span class="friend-name"></span><span  class="friend-steps"></span></li>
+              </ol>
+            </figure>
+          </div>
+          <div class="step-streak-container">
+            <figure class="streak-box">
+              <h4 class="streak-box">Step streaks:</h4>
+              <p class="step-streak-count streak-number"></p>
+              <p class="streak-box streak-thin-font">Number of  times you've had 3+ days of increasing steps</p>
+            </figure>
+          </div>
+        </div>
+        <div class="activity-graphs-container">
+          <h4 class="activity-graphs-title">Weekly Activity Stats</h4>
+          <figure>
+            <canvas id="chart--weeklyactivity-horbar1" class="horbar" height="200px" width="300px"></canvas>
+          </figure>
+          <figure>
+            <canvas id="chart--weeklyactivity-horbar2" class="horbar" height="200px" width="300px"></canvas>
+          </figure>
+          <figure>
+            <canvas id="chart--weeklyactivity-horbar3" class="horbar" height="200px" width="300px"></canvas>
+          </figure>
+        </div>
+        <div class="num-boxes-container">
+          <figure class="activity-number-boxes num-box">
+            <h4>Steps today:</h4>
+            <p class="h4--activity-steps med-number"></p>
+          </figure>
+          <figure class="activity-number-boxes num-box">
+            <h4>Minutes active today:</h4>
+            <p class="h4--activity-minutes med-number"></p>
+          </figure>
+          <figure class="activity-number-boxes num-box">
+            <h4>Miles walked today:</h4>
+            <p class="h4--activity-miles med-number"></p>
+          </figure>
+        </div>
     </main>
     <footer>
       <h6>Share your activities with friends!</h5>

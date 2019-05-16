@@ -21,11 +21,39 @@ main {
 section {
   border-radius: 3px 3px 0px 0px;
   height: auto;
+  padding: 60px 90px;
+}
+
+.user-info-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article--user-text {
+  width: 600px;
+}
+
+.ul--user-list {
+  padding: 0;
+  margin: 0;
+}
+
+.li--user {
+  list-style: none;
+  line-height: 2em;
+}
+
+.li--user span {
+  font-weight: 100;
 }
 
 figure {
-  height: 400px;
-  width: 400px;
+  padding: 0;
+  margin: 0;
+}
+
+.user--figure {
+  margin-left: 40px;
 }
 
 h1 {
@@ -59,9 +87,159 @@ h1 img {
   color: #45A29E;
 }
 
+.step-message-span {
+  color: #45A29E;
+  font-weight: 700;
+}
+
+.user-hydration-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-sleep-card {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sleep-chart-message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.sleep-message-title span {
+  color: #45A29E;
+  font-size: 21pt;
+}
+
+.sleep-message-title {
+  background-color: #C5C6C7;
+  border-radius: 3px;
+  font-family: 'Fira Sans', serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.user-sleep-card p {
+  padding: 0;
+  margin: 0;
+}
+
+.num-boxes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.num-box {
+  align-items: center;
+  background-color: #C5C6C7;
+  border-radius: 3px;
+  display: flex;
+  font-family: 'Fira Sans', serif;
+  flex-direction: column;
+  height: 230px;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  width: 230px;
+}
+
+.hydration-box {
+  height: 360px;
+  margin-right: 60px;
+}
+
+.hydration-box-oz {
+  padding: 0;
+}
+
+.polar-chart {
+  margin-left: 60px;
+}
+
+.streak-box {
+  align-items: center;
+  background-color: #45A29E;
+  border-radius: 3px;
+  color: #ededed;
+  display: flex;
+  font-family: 'Fira Sans', serif;
+  flex-direction: column;
+  height: 370px;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  width: 230px;
+}
+
+.streak-box h4 {
+  font-size: 18pt;
+}
+
+.streak-thin-font {
+  font-weight: 100;
+}
+
+.sleep-number-box p {
+  padding: 0;
+}
+
+.big-number {
+  color: #45A29E;
+  font-family: 'Fira Sans', serif;
+  font-size: 90pt;
+  margin: 0;
+}
+
+.streak-number {
+  color: white;
+  font-family: 'Fira Sans', serif;
+  font-size: 100pt;
+  margin: 0;
+}
+
+.med-number {
+  color: #45A29E;
+  font-family: 'Fira Sans', serif;
+  font-size: 55pt;
+  margin: 0;
+}
+
+.user-activity-card {
+  display: flex;
+  justify-content: space-around;
+}
+
+.activity-graphs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activity-graphs-title {
+  font-size: 18pt;
+}
+
+.horbar {
+  margin: 20px 0px;
+}
+
+.friend-board-container li{
+  font-weight: 100;
+}
+
+.activity-left-boxes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 li, td {
   font-family: 'Fira Sans', serif;
   font-weight: 500;
+  font-size: 16pt;
 }
 
 h2, h3, h4, h5, h6, th, p {
@@ -139,7 +317,6 @@ ul.tabs li.current {
 .tab-content {
   display: none;
   background: #ededed;
-  padding: 15px;
 }
 
 .tab-content.current {
@@ -162,11 +339,11 @@ footer {
 
 .footer--logos{
   align-self: center;
+  padding: 0;
 }
 
 .footer--logos img {
   height: 38px;
-  align-self: center;
   padding: 0px 5px;
 }
 
@@ -202,7 +379,8 @@ h1 img {
 }
 
 h3 {
-  display: block;
+  display: initial;
+  align-self: center;
 }
 
 .tab--logo {
@@ -220,6 +398,16 @@ li p {
 
 section {
   flex-direction: column;
+}
+
+.article--user-text {
+  align-self: center;
+  margin-bottom: 40px;
+  width: 390px;
+}
+
+.user--figure {
+  align-self: center;
 }
 }
 

@@ -11,15 +11,15 @@ $(document).ready(function() {
 
 	$('ul.tabs li').on('click', openPage);
 
-
 	function openPage() {
-		let tab_id = $(this).attr('data-tab');
+		let tab_id = $(this).attr('data-tab');	
 		$('ul.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
 		$(this).addClass('current');
-		$('#' + tab_id).addClass('current');
+		$('#' + tab_id).addClass('current'); 
 	}
 
+	setInterval(function() { hydrationRecordPolar.update();}, 1000);
 
 
 	function populateUserCard() {
@@ -43,20 +43,11 @@ $(document).ready(function() {
 	function displayStepGoalMessage() {
 		const avgSteps = userRepo.calculateAvgStepGoal();
 		const userSteps = userRepo.returnUserData(3).userData.dailyStepGoal;
-		$('.step-goal-message').text(`The average Activity Tracker user set a goal of ${avgSteps} steps per day. Your goal of ${userSteps} is ${userSteps > avgSteps ? 'above' : 'below'} average.`);
+		$('.step-goal-message').html(`The average Activity Tracker user set a goal of <span class="step-message-span">${avgSteps}</span> steps per day. Your goal of <span class="step-message-span">${userSteps}</span> is ${userSteps > avgSteps ? 'above' : 'below'} average.`);
 	}
 
 	function populateHydrationCard() {
-		populateHydrationInfo();
 		populateTodayHydration();
-	}
-
-	function populateHydrationInfo() {
-		const spans = $.makeArray($('.li--hydro span'));
-		const userInfo = Object.values(hydroRepo.returnHydrationUser(3).hydrationSevenDay('21/05/2019'));
-		for (let i = 0; i < userInfo.length; i++) {
-			$(spans[i]).text(userInfo[i]);
-		}
 	}
 
 	function populateTodayHydration() {
@@ -64,11 +55,10 @@ $(document).ready(function() {
 	}
 
 	function populateSleepCard() {
-		populateTodaySleep("13/08/2019");
+		populateTodaySleep('21/05/2019');
 		populateSleepMessage('.p--sleep-quality');
 		populateSleepMessage('.p--sleep-hours');
 		populateBestSleepCount();
-		populateSleepWeek('21/05/2019');
 	}
 
 	function populateSleepMessage(span) {
@@ -84,23 +74,25 @@ $(document).ready(function() {
 		$('.p--sleep-best').text(sleepRepo.returnSleep(3).countBestQualities());
 	}
 
-	function populateSleepWeek(givenDate) {
-		const spanHours = $.makeArray($('.li--span-hours'));
-		const spanQuals = $.makeArray($('.li--span-quality'));
-		const hoursInfo = Object.values(sleepRepo.returnSleep(3).returnSleepWeek(givenDate));
-		const qualInfo = Object.values(sleepRepo.returnSleep(3).returnQualWeek(givenDate));
-		for (let i = 0; i < hoursInfo.length; i++) {
-			$(spanHours[i]).text(hoursInfo[i]);
-			$(spanQuals[i]).text(qualInfo[i]);
-		}
-	}
-
 	function populateActivityCard() {
 		populateActivityTitles(".h4--activity-steps", '21/05/2019', 'numSteps');
 		populateActivityTitles(".h4--activity-minutes",'21/05/2019', 'minutesActive');
 		populateMilesTitle('21/05/2019');
-		populateActivityTable('21/05/2019');
-		populateActivityWeek('21/05/2019');
+		populateStreakCount();
+		populateFriendBoard();
+	}
+
+	function populateFriendBoard() {
+		const nameSpans = $.makeArray($('.friend-name'));
+		const stepSpans = $.makeArray($('.friend-steps'));
+		activityGoalsRepo.returnActivityGoal(3).returnBestFriends('21/05/2019').forEach((friend, index) => {
+			nameSpans[index].innerText = `${friend.name}, Steps: `;
+			stepSpans[index].innerText = friend.totalSteps;
+		})
+	}
+
+	function populateStreakCount() {
+		$('.step-streak-count').text(activityRepo.returnActivity(3).returnStepStreaks());
 	}
 
 	function populateActivityTitles(selector, givenDate, property) {
@@ -109,31 +101,6 @@ $(document).ready(function() {
 
 	function populateMilesTitle(givenDate) {
 		$(".h4--activity-miles").text(activityGoalsRepo.returnActivityGoal(3).returnStepsToMiles(givenDate));
-	}
-
-	function populateActivityTable(givenDate) {
-		const userStat = $.makeArray($('.td--activity-user'));
-		const avgStat = $.makeArray($('.td--activity-all'));
-		const userData = [
-			activityRepo.returnActivity(3).returnActiveDayProperty(givenDate, 'numSteps'),
-			activityRepo.returnActivity(3).returnActiveDayProperty(givenDate, 'minutesActive'),
-			activityRepo.returnActivity(3).returnActiveDayProperty(givenDate, 'flightsOfStairs')
-		];
-		const avgData = [
-			activityRepo.returnAllAvgs(givenDate, 'numSteps'),
-			activityRepo.returnAllAvgs(givenDate, 'minutesActive'),
-			activityRepo.returnAllAvgs(givenDate, 'flightsOfStairs')
-		]
-		for (let i = 0; i < userStat.length; i++) {
-			$(userStat[i]).text(userData[i]);
-			$(avgStat[i]).text(avgData[i]);
-		}
-	}
-
-	function populateActivityWeek(givenDate) {
-		$(".h5--weekly-steps").text(activityRepo.returnAllAvgs(givenDate, 'numSteps'));
-		$(".h5--weekly-minutes").text(activityRepo.returnAllAvgs(givenDate, 'minutesActive'));
-		$(".h5--weekly-stairs").text(activityRepo.returnAllAvgs(givenDate, 'flightsOfStairs'));
 	}
 
 	const stepGoalBar = new Chart($('#chart--stepgoal-bar'), {
@@ -175,13 +142,13 @@ $(document).ready(function() {
 				label: 'Weekly Hydration',
 				data: Object.values(hydroRepo.returnHydrationUser(3).hydrationSevenDay('21/05/2019')),
 				backgroundColor: [
-					'#45A29E',
-					'#45A29E',
-					'#45A29E',
-					'#45A29E',
-					'#45A29E',
-					'#45A29E',
-					'#C5C6C7'
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)',
+					'rgba(11, 204, 207, .3)'
 				]
 			}]
 		},
@@ -216,7 +183,7 @@ $(document).ready(function() {
 				]
 			}],
   		options: {
-        responsive: false,
+        responsive: true,
         title: {
             display: true,
             text: 'Chart.js'
@@ -272,9 +239,11 @@ $(document).ready(function() {
 			scales: {
 				yAxes: [{
 					gridLines: {
+						drawBorder: false,
 						display: false
 					},
 					ticks: {
+
 						beginAtZero: true
 					}
 				}]
@@ -285,16 +254,16 @@ $(document).ready(function() {
 	const weeklyActivityHorBar1 = new Chart($('#chart--weeklyactivity-horbar1'), {
 		type: 'horizontalBar',
 		data: {
-			labels: ['Steps Taken'],
+			labels: ['Steps'],
 			datasets: [{
-				label: 'Your Activity',
+				label: 'You',
 				data: [activityRepo.returnActivity(3).returnActiveDayProperty('21/05/2019', 'numSteps')],
 				backgroundColor: [
 					'rgba(11, 204, 207, .3)',
 				]
 			},
 			{
-				label: 'Avg User Activity',
+				label: 'Avg User',
 				data: [activityRepo.returnAllAvgs('21/05/2019', 'numSteps')],
 				backgroundColor: [
 					'rgba(207, 15, 11, .3)',
@@ -314,6 +283,9 @@ $(document).ready(function() {
 					ticks: {
 						beginAtZero: true
 					}
+				}],
+				yAxes: [{
+					barThickness: 50
 				}]
 			}
 		}
@@ -322,16 +294,16 @@ $(document).ready(function() {
 	const weeklyActivityHorBar2 = new Chart($('#chart--weeklyactivity-horbar2'), {
 		type: 'horizontalBar',
 		data: {
-			labels: ['Minutes Active'],
+			labels: [' Minutes'],
 			datasets: [{
-				label: 'Your Activity',
+				label: 'You',
 				data: [activityRepo.returnActivity(3).returnActiveDayProperty('21/05/2019', 'minutesActive'),],
 				backgroundColor: [
 					'rgba(11, 204, 207, .3)'
 				]
 			},
 			{
-				label: 'Avg User Activity',
+				label: 'Avg User',
 				data: [activityRepo.returnAllAvgs('21/05/2019', 'minutesActive')],
 				backgroundColor: [
 					'rgba(207, 15, 11, .3)'
@@ -351,6 +323,9 @@ $(document).ready(function() {
 					ticks: {
 						beginAtZero: true
 					}
+				}],
+				yAxes: [{
+					barThickness: 50
 				}]
 			}
 		}
@@ -359,16 +334,16 @@ $(document).ready(function() {
 	const weeklyActivityHorBar3 = new Chart($('#chart--weeklyactivity-horbar3'), {
 		type: 'horizontalBar',
 		data: {
-			labels: ['Flights Climbed'],
+			labels: ['Flights'],
 			datasets: [{
-				label: 'Your Activity',
+				label: 'You',
 				data: [activityRepo.returnActivity(3).returnActiveDayProperty('21/05/2019', 'flightsOfStairs')],
 				backgroundColor: [
 					'rgba(11, 204, 207, .3)'
 				]
 			},
 			{
-				label: 'Avg User Activity',
+				label: 'Avg User',
 				data: [activityRepo.returnAllAvgs('21/05/2019', 'flightsOfStairs')],
 				backgroundColor: [
 					'rgba(207, 15, 11, .3)'
@@ -388,6 +363,9 @@ $(document).ready(function() {
 					ticks: {
 						beginAtZero: true
 					}
+				}],
+				yAxes: [{
+					barThickness: 50
 				}]
 			}
 		}

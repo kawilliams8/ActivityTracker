@@ -38,7 +38,7 @@ class Activity {
 				streak = [];
 			}
 			return streaks;
-		}, []);
+		}, []).length;
 	}
 }
 
