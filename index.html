@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Activity Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,300,300i,500,500i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
@@ -12,20 +12,20 @@
   </head>
   <body>
     <header>
-      <h1><img src="../images/logo.svg" alt="Activity Tracker logo"> ACTIVITY<span class="h1--span">TRACKER</span></h1>
+      <h1><img src="./images/logo.svg" alt="Activity Tracker logo"> ACTIVITY<span class="h1--span">TRACKER</span></h1>
       <nav class="nav--icon-container">
-        <img src="../images/gear.svg" class="nav--account-icons" alt="Account settings icon">
-        <img src="../images/notification.svg" class="nav--account-icons" alt="Account alerts icon">
-        <img src="../images/upload.svg" class="nav--account-icons" alt="Activity upload icon">
+        <img src="./images/gear.svg" class="nav--account-icons" alt="Account settings icon">
+        <img src="./images/notification.svg" class="nav--account-icons" alt="Account alerts icon">
+        <img src="./images/upload.svg" class="nav--account-icons" alt="Activity upload icon">
       </nav>
     </header>
     <h2>Welcome, <span class="h2--first-name"></span></h2>
     <main>
       <ul class="tabs">
-        <li class="current" data-tab="tab-1"><img src="../images/user.svg" class="tab--logo" alt="Profile tab logo"><p>Profile</p></li>
-        <li data-tab="tab-2"><img src="../images/hydration.svg" class="tab--logo" alt="Hydration tab logo"><p>Hydration</p></li>
-        <li data-tab="tab-3"><img src="../images/sleep.svg" class="tab--logo" alt="Sleep tab logo"><p>Sleep</p></li>
-        <li data-tab="tab-4"><img src="../images/activity.svg" class="tab--logo" alt="Activity tab logo"><p>Activity</p></li>
+        <li class="current" data-tab="tab-1"><img src="./images/user.svg" class="tab--logo" alt="Profile tab logo"><p>Profile</p></li>
+        <li data-tab="tab-2"><img src="./images/hydration.svg" class="tab--logo" alt="Hydration tab logo"><p>Hydration</p></li>
+        <li data-tab="tab-3"><img src="./images/sleep.svg" class="tab--logo" alt="Sleep tab logo"><p>Sleep</p></li>
+        <li data-tab="tab-4"><img src="./images/activity.svg" class="tab--logo" alt="Activity tab logo"><p>Activity</p></li>
       </ul>
       <section id="tab-1" class="user-info-card user-tab tab-content current">
         <h3>Profile Information</h3>
@@ -132,27 +132,27 @@
     <footer>
       <h6>Share your activities with friends!</h5>
       <section class="footer--logos">
-        <a href="http://www.instagram.com" target="_blank"><img src="../images/instagram.svg" alt="Instagram logo"></a>
-        <a href="http://www.twitter.com" target="_blank"><img src="../images/twitter.svg" alt="Twitter logo"></a>
-        <a href="http://www.facebook.com" target="_blank"><img src="../images/facebook.svg" alt="Facebook logo"></a>
-        <a href="http://www.linkedin.com" target="_blank"><img src="../images/linkedin.svg" alt="LinkedIn logo"></a>
+        <a href="http://www.instagram.com" target="_blank"><img src="./images/instagram.svg " alt="Instagram logo"></a>
+        <a href="http://www.twitter.com" target="_blank"><img src="./images/twitter.svg" alt="Twitter logo"></a>
+        <a href="http://www.facebook.com" target="_blank"><img src="./images/facebook.svg" alt="Facebook logo"></a>
+        <a href="http://www.linkedin.com" target="_blank"><img src="./images/linkedin.svg" alt="LinkedIn logo"></a>
       </section>
       <h6 class="footer--copyright">Copyright &#9400; 2019</h6>
     </footer>
-    <script type="text/javascript" src="./User.js"></script>
-    <script type="text/javascript" src="../data/activity.js"></script>
-    <script type="text/javascript" src="../data/hydration.js"></script>
-    <script type="text/javascript" src="../data/sleep.js"></script>
-    <script type="text/javascript" src="../data/users.js"></script>
-    <script type="text/javascript" src="./Activity.js"></script>
-    <script type="text/javascript" src="./ActivityGoal.js"></script>
-    <script type="text/javascript" src="./ActivityGoalsRepo.js"></script>
-    <script type="text/javascript" src="./ActivityRepository.js"></script>
-    <script type="text/javascript" src="./Sleep.js"></script>
-    <script type="text/javascript" src="./SleepRepository.js"></script>
-    <script type="text/javascript" src="./Hydration.js"></script>
-    <script type="text/javascript" src="./HydrationRepository.js"></script>
-    <script type="text/javascript" src="./UserRepository.js"></script>
-    <script type="text/javascript" src="./scripts.js"></script>
+    <script type="text/javascript" src="src/User.js"></script>
+    <script type="text/javascript" src="./data/activity.js"></script>
+    <script type="text/javascript" src="./data/hydration.js"></script>
+    <script type="text/javascript" src="./data/sleep.js"></script>
+    <script type="text/javascript" src="./data/users.js"></script>
+    <script type="text/javascript" src="src/Activity.js"></script>
+    <script type="text/javascript" src="src/ActivityGoal.js"></script>
+    <script type="text/javascript" src="src/ActivityGoalsRepo.js"></script>
+    <script type="text/javascript" src="src/ActivityRepository.js"></script>
+    <script type="text/javascript" src="src/Sleep.js"></script>
+    <script type="text/javascript" src="src/SleepRepository.js"></script>
+    <script type="text/javascript" src="src/Hydration.js"></script>
+    <script type="text/javascript" src="src/HydrationRepository.js"></script>
+    <script type="text/javascript" src="src/UserRepository.js"></script>
+    <script type="text/javascript" src="src/scripts.js"></script>
   </body>
 </html>
